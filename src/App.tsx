@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Distributors from './pages/Distributors';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
+import Admin from './pages/Admin';
 import SocialDemo from './pages/SocialDemo';
 import NavbarDemo from './pages/NavbarDemo';
 import GradientMenuDemo from './pages/GradientMenuDemo';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/distributors" element={<Distributors />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="/social-demo" element={<SocialDemo />} />
             <Route path="/navbar-demo" element={<NavbarDemo />} />
             <Route path="/gradient-menu-demo" element={<GradientMenuDemo />} />
