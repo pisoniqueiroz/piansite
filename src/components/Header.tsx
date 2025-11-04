@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Search, Heart } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Menu, X, Search, Heart, LogOut, Shield } from 'lucide-react';
+import { useAuth } from '../contexts/AuthContext';
 import GradientMenu from './ui/gradient-menu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showGradientMenu, setShowGradientMenu] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
+  const { isAdmin, signOut } = useAuth();
 
   const navItems = [
     { path: '/', label: 'Home' },
@@ -18,6 +21,12 @@ const Header = () => {
   ];
 
   const isActive = (path: string) => location.pathname === path;
+
+  async function handleLogout() {
+    await signOut();
+    navigate('/');
+    setIsMenuOpen(false);
+  }
 
   return (
     <header className="backdrop-blur-md shadow-lg sticky top-0 z-50 border-b" style={{ backgroundColor: '#F7F7F7', borderBottomColor: '#fff9c2' }}>
@@ -60,8 +69,27 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Search and Social */}
+          {/* Admin Controls and Social */}
           <div className="hidden xl:flex items-center space-x-3 ml-8">
+            {isAdmin && (
+              <div className="flex items-center gap-2 mr-4">
+                <Link
+                  to="/admin"
+                  className="flex items-center gap-2 px-4 py-2 bg-pian-red text-white font-bold font-barlow-condensed hover:bg-red-700 transition-colors"
+                >
+                  <Shield className="h-4 w-4" />
+                  Admin
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="flex items-center gap-2 px-4 py-2 bg-gray-800 text-white font-bold font-barlow-condensed hover:bg-gray-700 transition-colors"
+                  title="Sair"
+                >
+                  <LogOut className="h-4 w-4" />
+                  Sair
+                </button>
+              </div>
+            )}
             <div className="flex space-x-2">
               <a 
                 href="https://www.facebook.com/pian.alimentos/?locale=pt_BR" 
@@ -182,8 +210,26 @@ const Header = () => {
                 {item.label}
               </Link>
             ))}
-            
-            {/* Mobile Search */}
+
+            {isAdmin && (
+              <>
+                <Link
+                  to="/admin"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center gap-2 px-3 py-3 rounded-lg bg-pian-red text-white font-bold transition-all duration-200 font-barlow-condensed text-xl"
+                >
+                  <Shield className="h-5 w-5" />
+                  Admin
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="w-full flex items-center gap-2 px-3 py-3 rounded-lg bg-gray-800 text-white font-bold transition-all duration-200 font-barlow-condensed text-xl text-left"
+                >
+                  <LogOut className="h-5 w-5" />
+                  Sair
+                </button>
+              </>
+            )}
           </div>
         )}
       </div>
