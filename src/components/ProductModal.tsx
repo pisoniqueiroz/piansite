@@ -168,23 +168,36 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
             {/* Information Sections */}
             <div className="max-w-4xl mx-auto space-y-6">
-              {/* Diferenciais - DESTAQUE */}
+              {/* Diferenciais - DESTAQUE MÁXIMO */}
               {sections.diferenciais && (
-                <div className="backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 ring-4 ring-pian-red/30">
-                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-8 py-6 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
-                    <div className="flex items-center justify-center">
-                      <Award className="h-8 w-8 text-white mr-4 animate-pulse" />
-                      <h2 className="text-2xl font-black text-white font-barlow-condensed uppercase tracking-wider">
-                        Diferenciais do Produto
-                      </h2>
-                    </div>
-                  </div>
+                <div className="relative mb-12">
+                  {/* Glow effect */}
+                  <div className="absolute -inset-2 bg-gradient-to-r from-pian-red via-red-600 to-pian-red rounded-3xl blur-xl opacity-30 animate-pulse"></div>
 
-                  <div className="px-8 py-8 bg-gradient-to-br from-red-50 to-white">
-                    <ul className="space-y-3 text-gray-900 text-base font-medium">
-                      {formatText(sections.diferenciais)}
-                    </ul>
+                  <div className="relative backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-500 ring-4 ring-pian-red border-2 border-pian-red/50">
+                    {/* Badge "DESTAQUE" */}
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
+                      <div className="bg-pian-yellow text-pian-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg border-2 border-pian-red">
+                        ⭐ DESTAQUE ⭐
+                      </div>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-pian-red via-red-600 to-red-700 px-8 py-8 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
+                      <div className="flex flex-col items-center justify-center text-center gap-3">
+                        <Award className="h-12 w-12 text-pian-yellow drop-shadow-lg animate-pulse" />
+                        <h2 className="text-3xl md:text-4xl font-black text-white font-barlow-condensed uppercase tracking-wider drop-shadow-lg">
+                          Diferenciais do Produto
+                        </h2>
+                        <div className="w-32 h-1 bg-pian-yellow rounded-full"></div>
+                      </div>
+                    </div>
+
+                    <div className="px-8 py-10 bg-gradient-to-br from-red-50 via-white to-red-50/30">
+                      <ul className="space-y-4 text-gray-900 text-lg font-semibold">
+                        {formatText(sections.diferenciais)}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               )}
