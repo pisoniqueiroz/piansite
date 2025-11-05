@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dog, Cat, ChevronRight } from 'lucide-react';
+import { Dog, Cat, Fish, ChevronRight } from 'lucide-react';
 
 interface ProductCardProps {
   id: number;
@@ -19,31 +19,30 @@ const ProductCard: React.FC<ProductCardProps> = ({
   type,
   onViewDetails
 }) => {
-  const getCategoryColor = (cat: string) => {
-    switch (cat) {
-      case 'Standard':
-        return 'bg-blue-500';
-      case 'Premium':
-        return 'bg-yellow-500';
-      case 'Premium Especial':
-        return 'bg-purple-500';
-      case 'Super Premium':
-        return 'bg-gradient-to-r from-yellow-400 to-yellow-500';
+  const getTypeColor = (productType: string) => {
+    switch (productType) {
+      case 'Rações Secas':
+        return 'bg-blue-600';
+      case 'Alimentos Úmidos':
+        return 'bg-orange-600';
+      case 'Snack':
+        return 'bg-green-600';
       default:
-        return 'bg-gray-500';
+        return 'bg-gray-600';
     }
   };
 
-  const getTypeIcon = (petType: string) => {
-    if (petType?.includes('Cães')) return <Dog className="h-4 w-4" />;
-    if (petType?.includes('Gatos')) return <Cat className="h-4 w-4" />;
-    if (petType?.includes('Cães e Gatos')) return (
-      <div className="flex space-x-1">
-        <Dog className="h-3 w-3" />
-        <Cat className="h-3 w-3" />
-      </div>
-    );
-    return null;
+  const getAnimalIcon = (animalCategory: string) => {
+    switch (animalCategory) {
+      case 'Cães':
+        return <Dog className="h-5 w-5" />;
+      case 'Gatos':
+        return <Cat className="h-5 w-5" />;
+      case 'Peixes':
+        return <Fish className="h-5 w-5" />;
+      default:
+        return null;
+    }
   };
 
   return (
@@ -92,16 +91,15 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </h3>
         
         {/* Badges */}
-        <div className="flex flex-wrap gap-2 mt-3">
-          <div className={`${getCategoryColor(category)} text-white px-3 py-1 text-xs font-semibold`}>
-            <span className="font-bold font-barlow-condensed">{category}</span>
-          </div>
+        <div className="flex flex-wrap items-center gap-2 mt-3">
           {type && (
-            <div className="bg-pian-red text-white px-3 py-1 text-xs font-semibold flex items-center space-x-1">
-              {getTypeIcon(type)}
+            <div className={`${getTypeColor(type)} text-white px-3 py-1.5 text-xs font-semibold rounded-md`}>
               <span className="font-bold font-barlow-condensed">{type}</span>
             </div>
           )}
+          <div className="bg-gray-800 text-white p-1.5 rounded-md flex items-center justify-center">
+            {getAnimalIcon(category)}
+          </div>
         </div>
       </div>
       
