@@ -117,16 +117,15 @@ const ProductSection = () => {
     return matchesSearch && matchesCategory && matchesLine;
   });
 
-  // Ordenar produtos por categoria (Super Premium primeiro)
-  const categoryOrder = { 'Super Premium': 1, 'Premium Especial': 2, 'Premium': 3, 'Standard': 4 };
+  // Ordenar produtos por classificação (Super Premium primeiro)
+  const classificationOrder = { 'Super Premium': 1, 'Premium Especial': 2, 'Premium': 3, 'Standard': 4 };
   const sortedProducts = filteredProducts.sort((a, b) => {
-    const orderA = categoryOrder[a.category as keyof typeof categoryOrder] || 5;
-    const orderB = categoryOrder[b.category as keyof typeof categoryOrder] || 5;
+    const orderA = classificationOrder[a.classification as keyof typeof classificationOrder] || 5;
+    const orderB = classificationOrder[b.classification as keyof typeof classificationOrder] || 5;
     if (orderA !== orderB) {
       return orderA - orderB;
     }
-    // Se mesma categoria, manter ordem original por ID
-    return a.id - b.id;
+    return a.name.localeCompare(b.name);
   });
 
   const handleViewDetails = (product: any) => {

@@ -17,6 +17,7 @@ export interface Product {
   category: string;
   type: string;
   line?: string;
+  classification?: string;
   created_at: string;
   updated_at: string;
 }
@@ -28,6 +29,7 @@ export interface ProductInsert {
   category: string;
   type: string;
   line?: string;
+  classification?: string;
 }
 
 export interface ProductUpdate extends Partial<ProductInsert> {}
