@@ -28,7 +28,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       case 'Premium Especial':
         return 'bg-orange-600';
       case 'Premium':
-        return 'bg-blue-600';
+        return 'bg-gradient-to-r from-red-600 to-red-700';
       case 'Standard':
         return 'bg-gray-600';
       default:
