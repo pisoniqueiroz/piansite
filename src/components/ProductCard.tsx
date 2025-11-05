@@ -54,7 +54,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
       className="bg-white shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer transform hover:-translate-y-1 flex flex-col h-full border-l-4 border-pian-red"
       onClick={onViewDetails}
     >
-      {/* Imagem do produto */}
       <div className="relative p-4 pb-3">
         <div className="w-full h-48 bg-white overflow-hidden">
           <img

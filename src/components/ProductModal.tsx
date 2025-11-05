@@ -141,18 +141,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
           <div className="p-8 lg:p-12">
             {/* Product Image Card */}
             <div className="max-w-2xl mx-auto mb-8">
-              <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
-                <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
-                  <div className="flex items-center justify-center">
-                    <Package className="h-6 w-6 text-pian-black mr-3" />
-                    <h2 className="text-xl font-bold text-pian-black font-barlow-condensed uppercase">
-                      Imagem do Produto
-                    </h2>
-                  </div>
-                </div>
-
-                <div className="p-8 bg-white">
+              <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 bg-white">
+                <div className="p-8">
                   <img
                     src={product.image}
                     alt={product.name}
@@ -168,33 +158,41 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
             {/* Information Sections */}
             <div className="max-w-4xl mx-auto space-y-6">
-              {/* Diferenciais - DESTAQUE MÁXIMO */}
+              {/* Diferenciais - SUPER DESTAQUE */}
               {sections.diferenciais && (
                 <div className="relative mb-12">
-                  {/* Glow effect */}
-                  <div className="absolute -inset-2 bg-gradient-to-r from-pian-red via-red-600 to-pian-red rounded-3xl blur-xl opacity-30 animate-pulse"></div>
+                  {/* Glow effect intensificado */}
+                  <div className="absolute -inset-4 bg-gradient-to-r from-pian-red via-red-500 to-pian-red rounded-3xl blur-2xl opacity-40 animate-pulse"></div>
+                  <div className="absolute -inset-2 bg-gradient-to-r from-pian-yellow via-yellow-400 to-pian-yellow rounded-3xl blur-lg opacity-30 animate-pulse" style={{animationDelay: '0.5s'}}></div>
 
-                  <div className="relative backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-500 ring-4 ring-pian-red border-2 border-pian-red/50">
-                    {/* Badge "DESTAQUE" */}
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20">
-                      <div className="bg-pian-yellow text-pian-black px-6 py-1.5 rounded-full text-xs font-black uppercase tracking-widest shadow-lg border-2 border-pian-red">
-                        ⭐ DESTAQUE ⭐
+                  <div className="relative backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.03] transition-all duration-500 ring-8 ring-pian-red/80 border-4 border-pian-yellow">
+                    {/* Badge "SUPER DESTAQUE" */}
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20">
+                      <div className="bg-gradient-to-r from-pian-yellow via-yellow-300 to-pian-yellow text-pian-black px-8 py-2.5 rounded-full text-sm font-black uppercase tracking-widest shadow-2xl border-4 border-pian-red animate-bounce" style={{animationDuration: '2s'}}>
+                        ⭐⭐ SUPER DESTAQUE ⭐⭐
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-pian-red via-red-600 to-red-700 px-8 py-8 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-shimmer"></div>
-                      <div className="flex flex-col items-center justify-center text-center gap-3">
-                        <Award className="h-12 w-12 text-pian-yellow drop-shadow-lg animate-pulse" />
-                        <h2 className="text-3xl md:text-4xl font-black text-white font-barlow-condensed uppercase tracking-wider drop-shadow-lg">
+                    <div className="bg-gradient-to-br from-pian-red via-red-600 to-red-700 px-10 py-12 relative overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent transform -skew-x-12 animate-shimmer"></div>
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+                      <div className="flex flex-col items-center justify-center text-center gap-4 relative z-10">
+                        <div className="bg-pian-yellow/20 p-4 rounded-full animate-pulse">
+                          <Award className="h-16 w-16 text-pian-yellow drop-shadow-2xl" />
+                        </div>
+                        <h2 className="text-4xl md:text-5xl font-black text-white font-barlow-condensed uppercase tracking-widest drop-shadow-2xl">
                           Diferenciais do Produto
                         </h2>
-                        <div className="w-32 h-1 bg-pian-yellow rounded-full"></div>
+                        <div className="flex gap-2 items-center">
+                          <div className="w-16 h-1.5 bg-pian-yellow rounded-full animate-pulse"></div>
+                          <div className="w-24 h-1.5 bg-pian-yellow rounded-full"></div>
+                          <div className="w-16 h-1.5 bg-pian-yellow rounded-full animate-pulse"></div>
+                        </div>
                       </div>
                     </div>
 
-                    <div className="px-8 py-10 bg-gradient-to-br from-red-50 via-white to-red-50/30">
-                      <ul className="space-y-4 text-gray-900 text-lg font-semibold">
+                    <div className="px-10 py-12 bg-gradient-to-br from-red-50 via-white to-yellow-50/30">
+                      <ul className="space-y-5 text-gray-900 text-xl font-bold">
                         {formatText(sections.diferenciais)}
                       </ul>
                     </div>
