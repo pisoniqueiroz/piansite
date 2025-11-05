@@ -101,8 +101,20 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           {data.map((item, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-80 md:w-96 pt-10 md:pt-20"
+              className="flex-shrink-0 w-80 md:w-96 pt-4"
             >
+              <div className="flex flex-col z-40 items-center mb-6">
+                <h3 className={`text-3xl md:text-4xl lg:text-5xl font-bold text-center transition-colors duration-500 font-barlow-condensed ${
+                  index === currentIndex
+                    ? 'text-red-600'
+                    : index < currentIndex
+                      ? 'text-red-500'
+                      : 'text-neutral-500'
+                }`}>
+                  {item.title}
+                </h3>
+              </div>
+
               <div className={`relative px-4 w-full transition-all duration-500 ${
                 index === currentIndex ? 'opacity-100 scale-100' : 'opacity-70 scale-95'
               }`}>
