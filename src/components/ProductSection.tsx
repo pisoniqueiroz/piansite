@@ -96,27 +96,42 @@ const ProductSection = () => {
   ];
 
   // Filtrar produtos
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         product.description.toLowerCase().includes(searchTerm.toLowerCase());
+  const getCategoryFilteredProducts = () => {
+    return products.filter(product => {
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           product.description.toLowerCase().includes(searchTerm.toLowerCase());
 
-    let matchesCategory = false;
+      let matchesCategory = false;
 
-    if (selectedCategory === 'Cachorros') {
-      matchesCategory = product.category === 'Cães';
-    } else if (selectedCategory === 'Gatos') {
-      matchesCategory = product.category === 'Gatos';
-    } else if (selectedCategory === 'Peixes') {
-      matchesCategory = product.category === 'Peixes';
-    } else if (selectedCategory === 'Alimentos Úmidos') {
-      matchesCategory = product.type === 'Alimentos Úmidos';
-    } else if (selectedCategory === 'Snacks') {
-      matchesCategory = product.type === 'Snack';
+      if (selectedCategory === 'Cachorros') {
+        matchesCategory = product.category === 'Cães';
+      } else if (selectedCategory === 'Gatos') {
+        matchesCategory = product.category === 'Gatos';
+      } else if (selectedCategory === 'Peixes') {
+        matchesCategory = product.category === 'Peixes';
+      } else if (selectedCategory === 'Alimentos Úmidos') {
+        matchesCategory = product.type === 'Alimentos Úmidos';
+      } else if (selectedCategory === 'Snacks') {
+        matchesCategory = product.type === 'Snack';
+      }
+
+      return matchesSearch && matchesCategory;
+    });
+  };
+
+  const categoryFilteredProducts = getCategoryFilteredProducts();
+
+  // Verificar se existe algum produto na linha selecionada
+  const hasProductsInSelectedLine = categoryFilteredProducts.some(
+    product => product.classification === selectedLine
+  );
+
+  const filteredProducts = categoryFilteredProducts.filter(product => {
+    // Se não há linha selecionada ou se a linha selecionada não tem produtos, mostra todos
+    if (!selectedLine || !hasProductsInSelectedLine) {
+      return true;
     }
-
-    const matchesLine = !selectedLine || product.classification === selectedLine;
-
-    return matchesSearch && matchesCategory && matchesLine;
+    return product.classification === selectedLine;
   });
 
   // Ordenar produtos por classificação (Super Premium primeiro)
@@ -137,7 +152,36 @@ const ProductSection = () => {
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
-    setSelectedLine(getFirstAvailableLine(category)); // Seleciona automaticamente a primeira linha disponível
+
+    // Filtrar produtos da nova categoria
+    const newCategoryProducts = products.filter(product => {
+      if (category === 'Cachorros') {
+        return product.category === 'Cães';
+      } else if (category === 'Gatos') {
+        return product.category === 'Gatos';
+      } else if (category === 'Peixes') {
+        return product.category === 'Peixes';
+      } else if (category === 'Alimentos Úmidos') {
+        return product.type === 'Alimentos Úmidos';
+      } else if (category === 'Snacks') {
+        return product.type === 'Snack';
+      }
+      return false;
+    });
+
+    // Encontrar a primeira linha disponível que tem produtos na hierarquia
+    const hierarchy = ['Super Premium', 'Premium Especial', 'Premium', 'Standard'];
+    const availableLines = getAvailableLines(category).map(line => line.name);
+
+    let firstLineWithProducts = '';
+    for (const line of hierarchy) {
+      if (availableLines.includes(line) && newCategoryProducts.some(p => p.classification === line)) {
+        firstLineWithProducts = line;
+        break;
+      }
+    }
+
+    setSelectedLine(firstLineWithProducts || '');
   };
 
   return (
