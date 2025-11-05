@@ -15,25 +15,25 @@ const ProductSection = () => {
   const [loading, setLoading] = useState(true);
   const location = useLocation();
 
-  // Linhas de ração baseadas na categoria selecionada
+  // Linhas de ração baseadas na categoria selecionada (sempre na ordem hierárquica)
   const getAvailableLines = (category: string) => {
     if (category === 'Cachorros' || category === 'Gatos') {
       return [
         { name: 'Super Premium', color: 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white' },
-        { name: 'Premium Especial', color: 'bg-purple-100 text-purple-800' },
-        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
-        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
+        { name: 'Premium Especial', color: 'bg-orange-600 text-white' },
+        { name: 'Premium', color: 'bg-gradient-to-r from-red-600 to-red-700 text-white' },
+        { name: 'Standard', color: 'bg-gray-600 text-white' },
       ];
     }
     if (category === 'Alimentos Úmidos' || category === 'Snacks') {
       return [
-        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
-        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
+        { name: 'Premium', color: 'bg-gradient-to-r from-red-600 to-red-700 text-white' },
+        { name: 'Standard', color: 'bg-gray-600 text-white' },
       ];
     }
     if (category === 'Peixes') {
       return [
-        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
+        { name: 'Premium', color: 'bg-gradient-to-r from-red-600 to-red-700 text-white' },
       ];
     }
     return [];
