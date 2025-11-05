@@ -186,7 +186,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                   </div>
 
                   <div className="px-8 py-6 bg-white">
-                    <ul className="space-y-2 text-gray-800">
+                    <ul className="space-y-2 text-gray-800 font-sans">
                       {formatText(sections.diferenciais)}
                     </ul>
                   </div>
