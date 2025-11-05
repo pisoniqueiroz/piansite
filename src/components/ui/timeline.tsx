@@ -117,23 +117,10 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               className="flex-shrink-0 w-80 md:w-96 pt-10 md:pt-20"
             >
               <div className="flex flex-col z-40 items-center mb-6">
-                <div className={`h-16 w-16 rounded-full flex items-center justify-center mb-4 transition-all duration-500 ${
-                  index === currentIndex 
-                    ? 'bg-gradient-to-r from-red-500 to-red-600 shadow-xl scale-110' 
-                    : index < currentIndex 
-                      ? 'bg-gradient-to-r from-red-400 to-red-500 shadow-lg'
-                      : 'bg-gray-200 shadow-md'
-                }`}>
-                  <span className={`text-xl font-bold ${
-                    index <= currentIndex ? 'text-white' : 'text-gray-600'
-                  }`}>
-                    {item.title}
-                  </span>
-                </div>
-                <h3 className={`text-xl md:text-2xl lg:text-3xl font-bold text-center transition-colors duration-500 ${
-                  index === currentIndex 
-                    ? 'text-red-600' 
-                    : index < currentIndex 
+                <h3 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-center transition-colors duration-500 mb-4 font-barlow-condensed ${
+                  index === currentIndex
+                    ? 'text-red-600'
+                    : index < currentIndex
                       ? 'text-red-500'
                       : 'text-neutral-500'
                 }`}>
