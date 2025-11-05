@@ -13,9 +13,10 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
     name: '',
     image: '',
     description: '',
-    category: 'Standard',
-    type: 'Cães',
+    category: 'Cães',
+    type: 'Ração Seca',
     line: '',
+    classification: 'Standard',
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -30,6 +31,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
         category: product.category,
         type: product.type,
         line: product.line || '',
+        classification: product.classification || 'Standard',
       });
       setImagePreview(product.image);
     }
@@ -192,32 +194,47 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
 
               <div>
                 <label className="block text-sm font-black text-pian-black mb-2 font-barlow-condensed uppercase">
-                  Categoria *
+                  Categoria (Animal) *
                 </label>
                 <select
                   value={formData.category}
                   onChange={(e) => handleChange('category', e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-200 focus:outline-none focus:border-pian-red font-barlow-condensed"
                 >
-                  <option value="Standard">Standard</option>
-                  <option value="Premium">Premium</option>
-                  <option value="Premium Especial">Premium Especial</option>
-                  <option value="Super Premium">Super Premium</option>
+                  <option value="Cães">Cães</option>
+                  <option value="Gatos">Gatos</option>
+                  <option value="Peixes">Peixes</option>
                 </select>
               </div>
 
               <div>
                 <label className="block text-sm font-black text-pian-black mb-2 font-barlow-condensed uppercase">
-                  Tipo *
+                  Tipo de Produto *
                 </label>
                 <select
                   value={formData.type}
                   onChange={(e) => handleChange('type', e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-200 focus:outline-none focus:border-pian-red font-barlow-condensed"
                 >
-                  <option value="Cães">Cães</option>
-                  <option value="Gatos">Gatos</option>
-                  <option value="Peixes">Peixes</option>
+                  <option value="Ração Seca">Ração Seca</option>
+                  <option value="Alimento Úmido">Alimento Úmido</option>
+                  <option value="Snack">Snack</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm font-black text-pian-black mb-2 font-barlow-condensed uppercase">
+                  Classificação *
+                </label>
+                <select
+                  value={formData.classification}
+                  onChange={(e) => handleChange('classification', e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 focus:outline-none focus:border-pian-red font-barlow-condensed"
+                >
+                  <option value="Standard">Standard</option>
+                  <option value="Premium">Premium</option>
+                  <option value="Premium Especial">Premium Especial</option>
+                  <option value="Super Premium">Super Premium</option>
                 </select>
               </div>
 
@@ -230,10 +247,10 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
                   value={formData.line}
                   onChange={(e) => handleChange('line', e.target.value)}
                   className="w-full px-4 py-3 border-2 border-gray-200 focus:outline-none focus:border-pian-red font-barlow-condensed"
-                  placeholder="Ex: Sachê, Enlatado, Snacks"
+                  placeholder="Ex: Mikdog, Mikcat, Prioritá, Dog E Dogs"
                 />
                 <p className="mt-1 text-sm text-gray-500 font-barlow-condensed">
-                  Use para alimentos úmidos ou produtos especiais
+                  Nome da marca/linha do produto
                 </p>
               </div>
             </div>

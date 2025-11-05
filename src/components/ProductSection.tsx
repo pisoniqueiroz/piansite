@@ -110,7 +110,7 @@ const ProductSection = () => {
       } else if (selectedCategory === 'Peixes') {
         matchesCategory = product.category === 'Peixes';
       } else if (selectedCategory === 'Alimentos Úmidos') {
-        matchesCategory = product.type === 'Alimentos Úmidos';
+        matchesCategory = product.type === 'Alimento Úmido';
       } else if (selectedCategory === 'Snacks') {
         matchesCategory = product.type === 'Snack';
       }
@@ -162,7 +162,7 @@ const ProductSection = () => {
       } else if (category === 'Peixes') {
         return product.category === 'Peixes';
       } else if (category === 'Alimentos Úmidos') {
-        return product.type === 'Alimentos Úmidos';
+        return product.type === 'Alimento Úmido';
       } else if (category === 'Snacks') {
         return product.type === 'Snack';
       }

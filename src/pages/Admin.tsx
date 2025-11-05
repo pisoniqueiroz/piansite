@@ -86,21 +86,21 @@ const Admin = () => {
     handleFormClose();
   }
 
-  const categories = ['Todos', 'Standard', 'Premium', 'Premium Especial', 'Super Premium'];
+  const classifications = ['Todos', 'Standard', 'Premium', 'Premium Especial', 'Super Premium'];
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCategory = selectedCategory === 'Todos' || product.category === selectedCategory;
+    const matchesCategory = selectedCategory === 'Todos' || product.classification === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
   const stats = {
     total: products.length,
-    standard: products.filter(p => p.category === 'Standard').length,
-    premium: products.filter(p => p.category === 'Premium').length,
-    premiumEspecial: products.filter(p => p.category === 'Premium Especial').length,
-    superPremium: products.filter(p => p.category === 'Super Premium').length,
+    standard: products.filter(p => p.classification === 'Standard').length,
+    premium: products.filter(p => p.classification === 'Premium').length,
+    premiumEspecial: products.filter(p => p.classification === 'Premium Especial').length,
+    superPremium: products.filter(p => p.classification === 'Super Premium').length,
   };
 
   return (
@@ -162,17 +162,17 @@ const Admin = () => {
               />
             </div>
             <div className="flex gap-2">
-              {categories.map(category => (
+              {classifications.map(classification => (
                 <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
+                  key={classification}
+                  onClick={() => setSelectedCategory(classification)}
                   className={`px-4 py-3 font-bold font-barlow-condensed border-2 transition-colors ${
-                    selectedCategory === category
+                    selectedCategory === classification
                       ? 'bg-pian-red text-white border-pian-red'
                       : 'bg-white text-pian-black border-gray-200 hover:border-pian-red'
                   }`}
                 >
-                  {category}
+                  {classification}
                 </button>
               ))}
             </div>
@@ -199,8 +199,9 @@ const Admin = () => {
                   <tr className="border-b-2 border-gray-200">
                     <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Imagem</th>
                     <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Nome</th>
-                    <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Categoria</th>
+                    <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Animal</th>
                     <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Tipo</th>
+                    <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Classificação</th>
                     <th className="text-left py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Linha</th>
                     <th className="text-right py-4 px-4 font-black text-pian-black font-barlow-condensed uppercase">Ações</th>
                   </tr>
@@ -223,13 +224,18 @@ const Admin = () => {
                         <div className="text-sm text-gray-600 font-barlow-condensed">{product.description}</div>
                       </td>
                       <td className="py-4 px-4">
-                        <span className="px-3 py-1 bg-gray-100 text-pian-black font-bold font-barlow-condensed text-sm">
+                        <span className="px-3 py-1 bg-blue-100 text-blue-800 font-bold font-barlow-condensed text-sm">
                           {product.category}
                         </span>
                       </td>
                       <td className="py-4 px-4">
-                        <span className="px-3 py-1 bg-blue-100 text-blue-800 font-bold font-barlow-condensed text-sm">
+                        <span className="px-3 py-1 bg-purple-100 text-purple-800 font-bold font-barlow-condensed text-sm">
                           {product.type}
+                        </span>
+                      </td>
+                      <td className="py-4 px-4">
+                        <span className="px-3 py-1 bg-orange-100 text-orange-800 font-bold font-barlow-condensed text-sm">
+                          {product.classification || 'Standard'}
                         </span>
                       </td>
                       <td className="py-4 px-4">
