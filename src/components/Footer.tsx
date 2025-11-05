@@ -69,8 +69,13 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 font-barlow-condensed" style={{ color: '#FDD528' }}>Nossos Produtos</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/products?category=Standard" className="text-gray-300 transition-colors duration-200 font-bold font-barlow-condensed" onMouseEnter={(e) => e.currentTarget.style.color = '#FDD528'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
-                  Linha Standard
+                <Link to="/products?category=Super%20Premium" className="text-gray-300 transition-colors duration-200 font-bold font-barlow-condensed" onMouseEnter={(e) => e.currentTarget.style.color = '#FDD528'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                  Linha Super Premium
+                </Link>
+              </li>
+              <li>
+                <Link to="/products?category=Premium%20Especial" className="text-gray-300 transition-colors duration-200 font-bold font-barlow-condensed" onMouseEnter={(e) => e.currentTarget.style.color = '#FDD528'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                  Linha Premium Especial
                 </Link>
               </li>
               <li>
@@ -79,13 +84,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/products?category=Premium%20Especial" className="text-gray-300 transition-colors duration-200 font-bold font-barlow-condensed" onMouseEnter={(e) => e.currentTarget.style.color = '#FDD528'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
-                  Premium Especial
-                </Link>
-              </li>
-              <li>
-                <Link to="/products?category=Super%20Premium" className="text-gray-300 transition-colors duration-200 font-bold font-barlow-condensed" onMouseEnter={(e) => e.currentTarget.style.color = '#FDD528'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
-                  Super Premium
+                <Link to="/products?category=Standard" className="text-gray-300 transition-colors duration-200 font-bold font-barlow-condensed" onMouseEnter={(e) => e.currentTarget.style.color = '#FDD528'} onMouseLeave={(e) => e.currentTarget.style.color = ''}>
+                  Linha Standard
                 </Link>
               </li>
               <li>
