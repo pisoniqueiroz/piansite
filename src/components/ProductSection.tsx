@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Search, Dog, Cat, Fish, Package } from 'lucide-react';
+import { Search, Dog, Cat, Fish, Package, Cookie } from 'lucide-react';
 import ProductCard from './ProductCard';
 import ProductModal from './ProductModal';
 import { supabase, Product } from '../lib/supabase';
@@ -63,6 +63,7 @@ const ProductSection = () => {
     { name: 'Gatos', icon: <Cat className="h-4 w-4" />, color: 'bg-green-100 text-green-800' },
     { name: 'Peixes', icon: <Fish className="h-4 w-4" />, color: 'bg-teal-100 text-teal-800' },
     { name: 'Alimentos Úmidos', icon: <Package className="h-4 w-4" />, color: 'bg-pink-100 text-pink-800' },
+    { name: 'Snacks', icon: <Cookie className="h-4 w-4" />, color: 'bg-amber-100 text-amber-800' },
   ];
 
   // Linhas de ração baseadas na categoria selecionada
@@ -95,25 +96,25 @@ const ProductSection = () => {
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    
+
     let matchesCategory = false;
-    
+
     if (selectedCategory === 'Todos') {
       matchesCategory = true;
-    } else if (selectedCategory === 'Standard' || selectedCategory === 'Premium' || selectedCategory === 'Premium Especial' || selectedCategory === 'Super Premium') {
-      matchesCategory = product.category === selectedCategory;
     } else if (selectedCategory === 'Cachorros') {
-      matchesCategory = product.type === 'Cães';
+      matchesCategory = product.category === 'Cães';
     } else if (selectedCategory === 'Gatos') {
-      matchesCategory = product.type === 'Gatos';
-    } else if (selectedCategory === 'Alimentos Úmidos') {
-      matchesCategory = product.line === 'Sachê' || product.line === 'Enlatado';
+      matchesCategory = product.category === 'Gatos';
     } else if (selectedCategory === 'Peixes') {
-      matchesCategory = product.type === 'Peixes';
+      matchesCategory = product.category === 'Peixes';
+    } else if (selectedCategory === 'Alimentos Úmidos') {
+      matchesCategory = product.type === 'Alimentos Úmidos';
+    } else if (selectedCategory === 'Snacks') {
+      matchesCategory = product.type === 'Snack';
     }
-    
-    const matchesLine = !selectedLine || product.category === selectedLine;
-    
+
+    const matchesLine = !selectedLine || product.classification === selectedLine;
+
     return matchesSearch && matchesCategory && matchesLine;
   });
 
