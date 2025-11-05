@@ -101,7 +101,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
               <div className={`${getClassificationColor(classification)} text-white px-3 py-1.5 text-xs font-semibold rounded-md`}>
                 <span className="font-bold font-barlow-condensed">Linha {classification}</span>
               </div>
-              <div className="bg-white border-2 border-pian-red text-pian-red p-1.5 rounded-md flex items-center justify-center">
+              <div className="text-pian-red flex items-center justify-center">
                 {getAnimalIcon(category)}
               </div>
             </div>
