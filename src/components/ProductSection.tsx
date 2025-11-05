@@ -7,13 +7,43 @@ import { supabase, Product } from '../lib/supabase';
 
 const ProductSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('Cachorros');
-  const [selectedLine, setSelectedLine] = useState('');
+  const [selectedLine, setSelectedLine] = useState('Super Premium');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const location = useLocation();
+
+  // Linhas de ração baseadas na categoria selecionada
+  const getAvailableLines = (category: string) => {
+    if (category === 'Cachorros' || category === 'Gatos') {
+      return [
+        { name: 'Super Premium', color: 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white' },
+        { name: 'Premium Especial', color: 'bg-purple-100 text-purple-800' },
+        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
+        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
+      ];
+    }
+    if (category === 'Alimentos Úmidos' || category === 'Snacks') {
+      return [
+        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
+        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
+      ];
+    }
+    if (category === 'Peixes') {
+      return [
+        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
+      ];
+    }
+    return [];
+  };
+
+  // Função para obter a primeira linha disponível para uma categoria
+  const getFirstAvailableLine = (category: string): string => {
+    const lines = getAvailableLines(category);
+    return lines.length > 0 ? lines[0].name : '';
+  };
 
   useEffect(() => {
     const categoryParam = new URLSearchParams(location.search).get('category');
@@ -29,6 +59,7 @@ const ProductSection = () => {
 
       const mappedCategory = categoryMap[categoryParam] || 'Cachorros';
       setSelectedCategory(mappedCategory);
+      setSelectedLine(getFirstAvailableLine(mappedCategory));
     }
   }, [location.search]);
 
@@ -63,30 +94,6 @@ const ProductSection = () => {
     { name: 'Alimentos Úmidos', icon: <Package className="h-4 w-4" />, color: 'bg-pink-100 text-pink-800' },
     { name: 'Snacks', icon: <Cookie className="h-4 w-4" />, color: 'bg-amber-100 text-amber-800' },
   ];
-
-  // Linhas de ração baseadas na categoria selecionada
-  const getAvailableLines = (category: string) => {
-    if (category === 'Cachorros' || category === 'Gatos') {
-      return [
-        { name: 'Super Premium', color: 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white' },
-        { name: 'Premium Especial', color: 'bg-purple-100 text-purple-800' },
-        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
-        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
-      ];
-    }
-    if (category === 'Alimentos Úmidos' || category === 'Snacks') {
-      return [
-        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
-        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
-      ];
-    }
-    if (category === 'Peixes') {
-      return [
-        { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
-      ];
-    }
-    return [];
-  };
 
   // Filtrar produtos
   const filteredProducts = products.filter(product => {
@@ -130,7 +137,7 @@ const ProductSection = () => {
 
   const handleCategorySelect = (category: string) => {
     setSelectedCategory(category);
-    setSelectedLine(''); // Reset line selection when category changes
+    setSelectedLine(getFirstAvailableLine(category)); // Seleciona automaticamente a primeira linha disponível
   };
 
   return (
