@@ -25,9 +25,6 @@ const Timeline = () => {
             </div>
             <h3 className="text-xl font-bold text-gray-900 font-montserrat">Inicia a História da PIAN em Paraí-RS</h3>
           </div>
-          <p className="text-gray-700 text-sm md:text-base font-normal mb-6 font-montserrat leading-relaxed">
-            Tudo começou com a nossa família em 1984, ano em que passamos a adquirir insumos para produzir alimentos para animais na cidade de Paraí, no Rio Grande do Sul. Inicialmente, os produtos eram comercializados apenas na localidade, mas logo, o negócio cresceu.
-          </p>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
