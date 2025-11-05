@@ -11,63 +11,223 @@ const BlogSection = () => {
     {
       id: 1,
       title: 'Como escolher a ração ideal para seu cão',
-      excerpt: 'Descubra os fatores mais importantes na hora de escolher a alimentação perfeita para seu pet.',
+      excerpt: 'Guia completo com critérios científicos e práticos para escolher a melhor alimentação para seu cão em cada fase da vida.',
       image: 'https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '15 de Janeiro, 2025',
-      readTime: '5 min',
+      date: '18 de Novembro, 2025',
+      readTime: '8 min',
       category: 'Nutrição',
       content: `
         <h2>A importância da escolha correta</h2>
-        <p>Escolher a ração ideal para seu cão é uma das decisões mais importantes que você pode tomar como tutor responsável. A alimentação adequada impacta diretamente na saúde, energia e longevidade do seu companheiro de quatro patas.</p>
-        
-        <h3>Fatores a considerar:</h3>
+        <p>Escolher a ração ideal para seu cão é uma das decisões mais importantes que você pode tomar como tutor responsável. A alimentação adequada impacta diretamente na saúde, energia, qualidade do pelo, sistema imunológico e longevidade do seu companheiro de quatro patas. Estudos mostram que cães alimentados com rações de alta qualidade podem viver até 2 anos a mais do que aqueles com alimentação inadequada.</p>
+
+        <h3>Entendendo os rótulos das rações</h3>
+        <p>Aprender a ler os rótulos é fundamental. Os ingredientes são listados em ordem decrescente de quantidade. Uma ração de qualidade deve ter:</p>
         <ul>
-          <li><strong>Idade do animal:</strong> Filhotes, adultos e idosos têm necessidades nutricionais diferentes</li>
-          <li><strong>Porte do cão:</strong> Cães pequenos, médios e grandes precisam de fórmulas específicas</li>
-          <li><strong>Nível de atividade:</strong> Cães ativos necessitam de mais energia</li>
-          <li><strong>Condições de saúde:</strong> Alguns cães podem ter necessidades especiais</li>
+          <li><strong>Fonte proteica identificada como primeiro ingrediente:</strong> Procure por "carne de frango", "carne bovina" ou "salmão" em vez de apenas "proteína animal" ou "subprodutos"</li>
+          <li><strong>Percentual mínimo de proteína:</strong> 18% para adultos e 22% para filhotes</li>
+          <li><strong>Gorduras saudáveis:</strong> Ômega 3 e 6 para pele e pelo</li>
+          <li><strong>Carboidratos de qualidade:</strong> Arroz integral, batata doce e aveia são melhores que milho e trigo</li>
+          <li><strong>Vitaminas e minerais:</strong> Complexo B, vitaminas A, D, E e minerais essenciais</li>
         </ul>
-        
-        <h3>Ingredientes de qualidade</h3>
-        <p>Procure sempre por rações que tenham proteína animal como primeiro ingrediente. Evite produtos com muitos conservantes artificiais, corantes e subprodutos de baixa qualidade.</p>
-        
-        <h3>Transição gradual</h3>
-        <p>Ao mudar a ração do seu cão, faça a transição gradualmente ao longo de 7-10 dias, misturando a nova ração com a antiga em proporções crescentes.</p>
-        
-        <p>Lembre-se: sempre consulte um veterinário para orientações específicas sobre a alimentação do seu pet.</p>
+
+        <h3>Fatores individuais a considerar</h3>
+        <h4>Idade do animal</h4>
+        <p><strong>Filhotes (até 12 meses):</strong> Necessitam de rações específicas com maior teor proteico e cálcio para desenvolvimento ósseo e muscular. O DHA é fundamental para desenvolvimento cerebral.</p>
+        <p><strong>Adultos (1-7 anos):</strong> Rações de manutenção balanceadas que sustentam a energia diária sem promover ganho de peso.</p>
+        <p><strong>Idosos (7+ anos):</strong> Fórmulas com menos calorias, mais fibras e suplementação de glucosamina para articulações.</p>
+
+        <h4>Porte do cão</h4>
+        <p><strong>Raças pequenas:</strong> Metabolismo acelerado, precisam de kibbles menores e maior densidade calórica por porção.</p>
+        <p><strong>Raças médias:</strong> Necessidades equilibradas com foco em manutenção de peso ideal.</p>
+        <p><strong>Raças grandes e gigantes:</strong> Precisam de suporte articular extra e controle de crescimento para evitar displasia.</p>
+
+        <h4>Nível de atividade física</h4>
+        <p>Cães de trabalho, esportistas ou muito ativos podem precisar de até 40% mais calorias que cães sedentários do mesmo porte. Rações para cães ativos têm maior concentração de proteínas e gorduras.</p>
+
+        <h4>Condições de saúde especiais</h4>
+        <ul>
+          <li><strong>Sensibilidade digestiva:</strong> Rações hipoalergênicas ou com proteína hidrolisada</li>
+          <li><strong>Problemas renais:</strong> Baixo teor de fósforo e proteína controlada</li>
+          <li><strong>Diabetes:</strong> Alto teor de fibras e baixo índice glicêmico</li>
+          <li><strong>Problemas cardíacos:</strong> Redução de sódio e suplementação com taurina</li>
+          <li><strong>Sobrepeso:</strong> Rações light com L-carnitina</li>
+        </ul>
+
+        <h3>Categorias de rações no mercado</h3>
+        <h4>Rações Econômicas</h4>
+        <p>Geralmente contêm subprodutos e ingredientes de menor qualidade. Podem resultar em maior volume de fezes e menor aproveitamento nutricional.</p>
+
+        <h4>Rações Premium</h4>
+        <p>Ingredientes de média qualidade, melhor digestibilidade e formulações mais específicas por idade e porte.</p>
+
+        <h4>Rações Super Premium</h4>
+        <p>Proteínas de alta qualidade, ingredientes nobres, conservantes naturais e formulações científicas avançadas. Melhor custo-benefício no longo prazo pela maior digestibilidade.</p>
+
+        <h4>Rações Premium Especial</h4>
+        <p>Formulações holísticas com ingredientes naturais, probióticos, prebióticos e nutracêuticos. Máxima qualidade e biodisponibilidade.</p>
+
+        <h3>Processo de transição alimentar</h3>
+        <p>Ao mudar a ração do seu cão, siga este protocolo de 10 dias:</p>
+        <ul>
+          <li><strong>Dias 1-3:</strong> 75% ração antiga + 25% ração nova</li>
+          <li><strong>Dias 4-6:</strong> 50% ração antiga + 50% ração nova</li>
+          <li><strong>Dias 7-9:</strong> 25% ração antiga + 75% ração nova</li>
+          <li><strong>Dia 10:</strong> 100% ração nova</li>
+        </ul>
+        <p>Monitore as fezes durante a transição. Fezes muito moles ou diarreia indicam que o processo precisa ser mais lento.</p>
+
+        <h3>Sinais de uma alimentação adequada</h3>
+        <ul>
+          <li>Pelo brilhante e sedoso</li>
+          <li>Pele saudável sem descamação</li>
+          <li>Fezes firmes e em quantidade moderada</li>
+          <li>Energia e disposição adequadas</li>
+          <li>Peso ideal mantido</li>
+          <li>Boa musculatura</li>
+          <li>Dentes limpos e gengivas rosadas</li>
+        </ul>
+
+        <h3>Mitos comuns sobre rações</h3>
+        <p><strong>Mito 1:</strong> "Ração sem grãos é sempre melhor" - Falso. A maioria dos cães tolera grãos bem, e eles fornecem energia e fibras importantes.</p>
+        <p><strong>Mito 2:</strong> "Devo variar a ração frequentemente" - Falso. Mudanças constantes podem causar problemas digestivos. Mantenha a mesma ração quando ela funciona bem.</p>
+        <p><strong>Mito 3:</strong> "Ração cara é desperdício" - Falso. Rações premium têm maior digestibilidade, você alimenta menos e o cão absorve mais nutrientes, resultando em melhor saúde e menor custo veterinário.</p>
+
+        <p><strong>Conclusão:</strong> Invista tempo na escolha da ração ideal. Consulte sempre um médico veterinário, especialmente se seu cão tem necessidades especiais. A ração certa é um investimento na saúde e longevidade do seu melhor amigo!</p>
       `
     },
     {
       id: 2,
       title: 'Alimentação de filhotes: guia completo',
-      excerpt: 'Tudo que você precisa saber sobre a nutrição adequada para filhotes em cada fase de crescimento.',
+      excerpt: 'Protocolo detalhado de nutrição para filhotes desde o nascimento até a fase adulta, com cronogramas e quantidades específicas para cada raça.',
       image: 'https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '10 de Janeiro, 2025',
-      readTime: '7 min',
+      date: '15 de Novembro, 2025',
+      readTime: '10 min',
       category: 'Cuidados',
       content: `
-        <h2>Nutrição na fase mais importante</h2>
-        <p>Os primeiros meses de vida são cruciais para o desenvolvimento saudável do filhote. Uma alimentação adequada nesta fase estabelece as bases para uma vida longa e saudável.</p>
-        
-        <h3>Fases do crescimento:</h3>
-        <h4>0-4 semanas: Leite materno</h4>
-        <p>O leite materno é o alimento ideal, fornecendo todos os nutrientes e anticorpos necessários.</p>
-        
-        <h4>4-8 semanas: Desmame gradual</h4>
-        <p>Introdução gradual de ração específica para filhotes, inicialmente umedecida.</p>
-        
-        <h4>8 semanas em diante: Ração para filhotes</h4>
-        <p>Ração seca específica para filhotes, rica em proteínas e cálcio para o crescimento.</p>
-        
-        <h3>Frequência das refeições:</h3>
+        <h2>Nutrição na fase mais importante da vida</h2>
+        <p>Os primeiros meses de vida são cruciais para o desenvolvimento saudável do filhote. Uma alimentação adequada nesta fase estabelece as bases para uma vida longa e saudável, prevenindo problemas futuros e garantindo crescimento adequado dos ossos, músculos, cérebro e sistema imunológico. Erros nutricionais nesta fase podem ter consequências irreversíveis.</p>
+
+        <h3>Fase Neonatal (0-4 semanas): O poder do leite materno</h3>
+        <p>O leite materno é o alimento perfeito, contendo:</p>
         <ul>
-          <li>2-4 meses: 4 refeições por dia</li>
-          <li>4-6 meses: 3 refeições por dia</li>
-          <li>6+ meses: 2 refeições por dia</li>
+          <li><strong>Colostro (primeiras 72h):</strong> Rico em anticorpos (imunoglobulinas), proteínas e vitaminas. Essencial para a imunidade do filhote</li>
+          <li><strong>Leite de transição (3-14 dias):</strong> Composição gradualmente muda, mantendo alto valor nutricional</li>
+          <li><strong>Leite maduro (após 2 semanas):</strong> Composição estável com todos os nutrientes necessários</li>
         </ul>
-        
-        <h3>Sinais de boa nutrição:</h3>
-        <p>Filhote ativo, pelo brilhante, crescimento adequado e fezes firmes são indicadores de uma alimentação correta.</p>
+        <p><strong>Quando o leite materno não está disponível:</strong> Use substitutos específicos para filhotes caninos. Leite de vaca é inadequado e pode causar diarreia severa. Fórmulas comerciais devem ser aquecidas a 37-38°C.</p>
+
+        <h3>Fase de Desmame (4-8 semanas): Transição gradual</h3>
+        <p>O desmame deve ser gradual para evitar estresse digestivo:</p>
+        <h4>Semana 4:</h4>
+        <ul>
+          <li>Introduza ração premium para filhotes umedecida com água morna formando uma papinha</li>
+          <li>Ofereça 3-4 vezes ao dia em pequenas quantidades</li>
+          <li>Mantenha acesso ao leite materno</li>
+        </ul>
+        <h4>Semana 5-6:</h4>
+        <ul>
+          <li>Reduza gradualmente a água na ração</li>
+          <li>Aumente a frequência para 4-5 refeições diárias</li>
+          <li>Filhotes começam a depender menos do leite materno</li>
+        </ul>
+        <h4>Semana 7-8:</h4>
+        <ul>
+          <li>Ração completamente seca (kibbles)</li>
+          <li>Desmame completo aos 8 semanas</li>
+          <li>Água fresca sempre disponível</li>
+        </ul>
+
+        <h3>Fase de Crescimento Rápido (2-6 meses): Nutrição intensa</h3>
+        <p>Esta é a fase de crescimento mais acelerado. A alimentação deve ser:</p>
+        <ul>
+          <li><strong>Alta em proteína:</strong> Mínimo 28-30% para desenvolvimento muscular</li>
+          <li><strong>Cálcio e fósforo balanceados:</strong> Proporção 1.2:1 para formação óssea adequada</li>
+          <li><strong>DHA:</strong> Ácido graxo essencial para desenvolvimento cerebral e visual</li>
+          <li><strong>Vitaminas do complexo B:</strong> Suporte ao metabolismo energético</li>
+        </ul>
+
+        <h4>Frequência alimentar por idade:</h4>
+        <ul>
+          <li><strong>2-3 meses:</strong> 4 refeições por dia (manhã, meio-dia, tarde, noite)</li>
+          <li><strong>3-6 meses:</strong> 3 refeições por dia (manhã, tarde, noite)</li>
+          <li><strong>6-12 meses:</strong> 2 refeições por dia (manhã e noite)</li>
+        </ul>
+
+        <h4>Quantidade diária por porte (2-6 meses):</h4>
+        <ul>
+          <li><strong>Raças pequenas (até 10kg adulto):</strong> 3-4% do peso corporal atual</li>
+          <li><strong>Raças médias (10-25kg adulto):</strong> 4-5% do peso corporal atual</li>
+          <li><strong>Raças grandes (25-45kg adulto):</strong> 5-6% do peso corporal atual</li>
+          <li><strong>Raças gigantes (45kg+ adulto):</strong> 6-7% do peso corporal atual</li>
+        </ul>
+
+        <h3>Fase de Crescimento Moderado (6-12 meses): Consolidação</h3>
+        <p>O ritmo de crescimento desacelera, mas as necessidades ainda são elevadas:</p>
+        <ul>
+          <li>Mantenha ração para filhotes até pelo menos 12 meses</li>
+          <li>Raças grandes e gigantes devem usar ração específica até 18-24 meses</li>
+          <li>Ajuste porções mensalmente conforme o ganho de peso</li>
+          <li>Monitore condição corporal - filhote deve estar magro, mas não magro demais</li>
+        </ul>
+
+        <h3>Nutrientes críticos para filhotes</h3>
+        <h4>Proteína (28-32%)</h4>
+        <p>Fundamental para crescimento muscular. Fontes ideais: frango, carne bovina, cordeiro, peixe. Evite rações com "subprodutos" como principal fonte proteica.</p>
+
+        <h4>Cálcio e Fósforo</h4>
+        <p>Essenciais para ossos e dentes. Excesso é tão prejudicial quanto falta, especialmente em raças grandes. NUNCA suplemente sem orientação veterinária.</p>
+
+        <h4>DHA (Ácido docosahexaenoico)</h4>
+        <p>Encontrado em óleo de peixe, crucial para desenvolvimento do cérebro e retina. Filhotes com DHA adequado têm melhor capacidade de aprendizado.</p>
+
+        <h4>Prebióticos e Probióticos</h4>
+        <p>Fortalecem o sistema digestivo e imunológico. Busque rações que contenham FOS, MOS ou culturas de Lactobacillus.</p>
+
+        <h3>Sinais de nutrição adequada</h3>
+        <ul>
+          <li><strong>Crescimento consistente:</strong> Ganho de peso semanal regular</li>
+          <li><strong>Energia apropriada:</strong> Ativo mas não hiperativo</li>
+          <li><strong>Pelo brilhante:</strong> Macio e sem falhas</li>
+          <li><strong>Fezes firmes:</strong> Marrom, formadas, sem odor excessivo</li>
+          <li><strong>Desenvolvimento muscular:</strong> Costelas devem ser sentidas mas não visíveis</li>
+          <li><strong>Olhos brilhantes:</strong> Claros e alertas</li>
+          <li><strong>Gengivas rosadas:</strong> Boa perfusão sanguínea</li>
+        </ul>
+
+        <h3>Erros comuns a evitar</h3>
+        <ul>
+          <li><strong>Superalimentação:</strong> Causa obesidade e problemas articulares, especialmente em raças grandes</li>
+          <li><strong>Ração de adulto prematura:</strong> Não fornece nutrientes suficientes para crescimento</li>
+          <li><strong>Suplementação não orientada:</strong> Pode desequilibrar minerais e causar problemas ósseos</li>
+          <li><strong>Alimentação inconsistente:</strong> Mudanças frequentes de ração causam problemas digestivos</li>
+          <li><strong>Petiscos excessivos:</strong> Não devem ultrapassar 5% das calorias diárias</li>
+          <li><strong>Alimentos humanos:</strong> Muitos são tóxicos ou desequilibram a dieta</li>
+        </ul>
+
+        <h3>Sinais de alerta nutricional</h3>
+        <p>Consulte imediatamente um veterinário se observar:</p>
+        <ul>
+          <li>Perda de peso ou ganho insuficiente</li>
+          <li>Diarreia persistente</li>
+          <li>Vômitos frequentes</li>
+          <li>Letargia excessiva</li>
+          <li>Pelo opaco ou queda de pelo</li>
+          <li>Barriga inchada (pode indicar vermes)</li>
+          <li>Fraqueza nas patas traseiras</li>
+          <li>Convulsões (pode ser hipoglicemia)</li>
+        </ul>
+
+        <h3>Transição para ração de adulto</h3>
+        <p>Momento varia por porte:</p>
+        <ul>
+          <li><strong>Raças pequenas:</strong> 10-12 meses</li>
+          <li><strong>Raças médias:</strong> 12-15 meses</li>
+          <li><strong>Raças grandes:</strong> 15-18 meses</li>
+          <li><strong>Raças gigantes:</strong> 18-24 meses</li>
+        </ul>
+        <p>Faça a transição gradual em 10-14 dias para evitar problemas digestivos.</p>
+
+        <p><strong>Conclusão:</strong> A nutrição adequada de filhotes é um investimento na saúde futura do cão. Escolha sempre rações premium específicas para filhotes, siga as recomendações de quantidade, mantenha horários regulares e monitore o desenvolvimento. Consultas veterinárias regulares garantem que o crescimento está no caminho certo!</p>
       `
     },
     {
@@ -75,8 +235,8 @@ const BlogSection = () => {
       title: 'Cuidados especiais com cães idosos',
       excerpt: 'Aprenda como adaptar a alimentação e cuidados para garantir qualidade de vida na terceira idade.',
       image: 'https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '5 de Janeiro, 2025',
-      readTime: '6 min',
+      date: '12 de Novembro, 2025',
+      readTime: '9 min',
       category: 'Saúde',
       content: `
         <h2>A terceira idade canina</h2>
@@ -112,10 +272,10 @@ const BlogSection = () => {
     {
       id: 4,
       title: 'Nutrição felina: necessidades especiais dos gatos',
-      excerpt: 'Entenda as particularidades da alimentação felina e como escolher a ração ideal para seu gato.',
+      excerpt: 'Guia científico completo sobre as necessidades nutricionais únicas dos felinos como carnívoros obrigatórios, incluindo nutrientes essenciais e estratégias de hidratação.',
       image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '20 de Janeiro, 2025',
-      readTime: '6 min',
+      date: '10 de Novembro, 2025',
+      readTime: '9 min',
       category: 'Nutrição',
       content: `
         <h2>Os felinos são únicos</h2>
@@ -148,8 +308,8 @@ const BlogSection = () => {
       title: 'Hidratação: a importância da água para pets',
       excerpt: 'Descubra por que a hidratação adequada é fundamental para a saúde do seu pet e como estimulá-la.',
       image: 'https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '18 de Janeiro, 2025',
-      readTime: '4 min',
+      date: '8 de Novembro, 2025',
+      readTime: '7 min',
       category: 'Saúde',
       content: `
         <h2>Água: o nutriente esquecido</h2>
@@ -189,8 +349,8 @@ const BlogSection = () => {
       title: 'Transição alimentar: como mudar a ração sem estresse',
       excerpt: 'Aprenda o método correto para fazer a transição alimentar e evitar problemas digestivos.',
       image: 'https://images.pexels.com/photos/4498185/pexels-photo-4498185.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '12 de Janeiro, 2025',
-      readTime: '5 min',
+      date: '5 de Novembro, 2025',
+      readTime: '8 min',
       category: 'Cuidados',
       content: `
         <h2>Mudança gradual é a chave</h2>
@@ -226,10 +386,10 @@ const BlogSection = () => {
     {
       id: 7,
       title: 'Obesidade em pets: prevenção e tratamento',
-      excerpt: 'Como identificar, prevenir e tratar o sobrepeso em cães e gatos para uma vida mais saudável.',
+      excerpt: 'Protocolo completo de prevenção e reversão da obesidade canina e felina, com estratégias nutricionais e planos de exercícios personalizados.',
       image: 'https://images.pexels.com/photos/3687770/pexels-photo-3687770.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '8 de Janeiro, 2025',
-      readTime: '8 min',
+      date: '2 de Novembro, 2025',
+      readTime: '10 min',
       category: 'Saúde',
       content: `
         <h2>Um problema crescente</h2>
@@ -270,8 +430,8 @@ const BlogSection = () => {
       title: 'Alergias alimentares em pets: identificação e manejo',
       excerpt: 'Como reconhecer sinais de alergia alimentar e quais medidas tomar para o bem-estar do seu pet.',
       image: 'https://images.pexels.com/photos/4498300/pexels-photo-4498300.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '3 de Janeiro, 2025',
-      readTime: '7 min',
+      date: '30 de Outubro, 2025',
+      readTime: '9 min',
       category: 'Saúde',
       content: `
         <h2>Reconhecendo as alergias alimentares</h2>
@@ -315,8 +475,8 @@ const BlogSection = () => {
       title: 'Benefícios da ração úmida para pets',
       excerpt: 'Conheça as vantagens dos alimentos úmidos e como incorporá-los na dieta do seu pet.',
       image: 'https://images.pexels.com/photos/4498296/pexels-photo-4498296.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '28 de Dezembro, 2024',
-      readTime: '5 min',
+      date: '28 de Outubro, 2025',
+      readTime: '8 min',
       category: 'Nutrição',
       content: `
         <h2>Alimentos úmidos: mais que um mimo</h2>
@@ -352,8 +512,8 @@ const BlogSection = () => {
       title: 'Exercícios e alimentação: a dupla perfeita',
       excerpt: 'Como equilibrar atividade física e nutrição para manter seu pet saudável e em forma.',
       image: 'https://images.pexels.com/photos/1629781/pexels-photo-1629781.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '30 de Dezembro, 2024',
-      readTime: '6 min',
+      date: '25 de Outubro, 2025',
+      readTime: '9 min',
       category: 'Comportamento',
       content: `
         <h2>Movimento e nutrição andam juntos</h2>
@@ -394,8 +554,8 @@ const BlogSection = () => {
       title: 'Petiscos saudáveis: como escolher e quando oferecer',
       excerpt: 'Guia completo sobre petiscos: tipos, frequência e como usar na educação do seu pet.',
       image: 'https://images.pexels.com/photos/4498307/pexels-photo-4498307.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '25 de Dezembro, 2024',
-      readTime: '4 min',
+      date: '22 de Outubro, 2025',
+      readTime: '7 min',
       category: 'Cuidados',
       content: `
         <h2>Petiscos: prazer com responsabilidade</h2>
@@ -441,8 +601,8 @@ const BlogSection = () => {
       title: 'Saúde dental: alimentação e cuidados bucais',
       excerpt: 'A importância da saúde bucal dos pets e como a alimentação pode ajudar na prevenção.',
       image: 'https://images.pexels.com/photos/4498299/pexels-photo-4498299.jpeg?auto=compress&cs=tinysrgb&w=400',
-      date: '22 de Dezembro, 2024',
-      readTime: '5 min',
+      date: '20 de Outubro, 2025',
+      readTime: '8 min',
       category: 'Saúde',
       content: `
         <h2>Sorriso saudável, pet feliz</h2>
