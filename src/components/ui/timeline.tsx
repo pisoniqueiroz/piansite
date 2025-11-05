@@ -92,19 +92,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </button>
             ))}
           </div>
-          
-          {/* Year Labels */}
-          <div className="flex justify-between items-center mt-2">
-            {data.map((item, index) => (
-              <div key={index} className="text-center">
-                <span className={`text-xs font-bold transition-colors duration-300 ${
-                  index === currentIndex ? 'text-red-600' : 'text-gray-500'
-                }`}>
-                  {item.title}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
@@ -116,18 +103,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               key={index}
               className="flex-shrink-0 w-80 md:w-96 pt-10 md:pt-20"
             >
-              <div className="flex flex-col z-40 items-center mb-6">
-                <h3 className={`text-2xl md:text-3xl lg:text-4xl font-bold text-center transition-colors duration-500 mb-4 font-barlow-condensed ${
-                  index === currentIndex
-                    ? 'text-red-600'
-                    : index < currentIndex
-                      ? 'text-red-500'
-                      : 'text-neutral-500'
-                }`}>
-                  {item.title}
-                </h3>
-              </div>
-
               <div className={`relative px-4 w-full transition-all duration-500 ${
                 index === currentIndex ? 'opacity-100 scale-100' : 'opacity-70 scale-95'
               }`}>
