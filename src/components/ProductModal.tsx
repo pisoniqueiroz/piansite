@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { X, ChevronRight, Package, Award, Beef, Activity } from 'lucide-react';
+import React from 'react';
+import { X, Package, Award, Beef, Activity } from 'lucide-react';
 
 interface ProductModalProps {
   product: {
@@ -16,8 +16,6 @@ interface ProductModalProps {
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
-  const [activeTab, setActiveTab] = useState<'description' | 'composition' | 'nutritional'>('description');
-
   if (!isOpen) return null;
 
   const parseDescription = (description: string) => {
@@ -96,181 +94,185 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
   const sections = parseDescription(product.description);
 
-  const renderTabContent = () => {
-    switch (activeTab) {
-      case 'description':
-        return (
-          <div className="space-y-6">
-            {sections.descricao && (
-              <div>
-                <div className="text-gray-800 leading-relaxed text-base space-y-3">
-                  {formatText(sections.descricao)}
-                </div>
-              </div>
-            )}
-            {sections.diferenciais && (
-              <div className="mt-8 bg-red-50 border border-pian-red/20 p-6 rounded-lg">
-                <div className="flex items-center gap-3 mb-4">
-                  <Award className="h-6 w-6 text-pian-red" />
-                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
-                    Diferenciais do Produto
-                  </h3>
-                </div>
-                <ul className="space-y-2 text-gray-700">
-                  {formatText(sections.diferenciais)}
-                </ul>
-              </div>
-            )}
-          </div>
-        );
-      case 'composition':
-        return (
-          <div>
-            {sections.composicao && (
-              <div className="bg-white rounded-lg p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-4">
-                  <Beef className="h-6 w-6 text-pian-red" />
-                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
-                    Ingredientes
-                  </h3>
-                </div>
-                <div className="text-gray-700 text-sm leading-relaxed">
-                  {formatText(sections.composicao)}
-                </div>
-              </div>
-            )}
-          </div>
-        );
-      case 'nutritional':
-        return (
-          <div className="space-y-6">
-            {sections.enriquecimento && (
-              <div className="bg-white rounded-lg p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-4">
-                  <Activity className="h-6 w-6 text-pian-red" />
-                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
-                    Enriquecimento Mínimo por KG
-                  </h3>
-                </div>
-                <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed">
-                  {formatText(sections.enriquecimento)}
-                </ul>
-              </div>
-            )}
-            {sections.niveis && (
-              <div className="bg-white rounded-lg p-6 border border-gray-200">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="h-6 w-6 text-pian-red" />
-                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
-                    Níveis de Garantia
-                  </h3>
-                </div>
-                <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed">
-                  {formatText(sections.niveis)}
-                </ul>
-              </div>
-            )}
-          </div>
-        );
-    }
-  };
-
   return (
-    <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-      <div className="bg-white max-w-7xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
-        {/* Close Button - Fixed Top Right */}
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div className="bg-white max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl rounded-3xl border border-pian-yellow/20 relative">
+        {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 z-20 p-3 bg-pian-black/90 hover:bg-pian-red text-white transition-all duration-200 group rounded-full shadow-lg"
+          className="absolute top-6 right-6 z-20 p-3 bg-pian-black/90 hover:bg-pian-red text-white transition-all duration-300 group rounded-full shadow-lg hover:scale-110"
           aria-label="Fechar"
         >
-          <X className="h-6 w-6 group-hover:rotate-90 transition-transform duration-200" />
+          <X className="h-6 w-6 group-hover:rotate-90 transition-transform duration-300" />
         </button>
 
-        {/* Top Section - Product Hero */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 bg-gradient-to-br from-gray-50 to-white border-b-4 border-pian-red">
-          {/* Left: Product Image */}
-          <div className="flex items-center justify-center">
-            <div className="relative w-full max-w-md">
-              <div className="absolute inset-0 bg-gradient-to-br from-pian-red/20 to-orange-500/20 blur-3xl"></div>
-              <div className="relative bg-white rounded-2xl p-8 shadow-xl">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-80 object-contain transform hover:scale-105 transition-transform duration-500"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.src = '/fallback-product.svg';
-                  }}
-                />
-              </div>
-            </div>
+        {/* Hero Header - Inspired by Distributors */}
+        <div className="bg-pian-black relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0" style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, #FDD528 2px, transparent 2px),
+                               radial-gradient(circle at 75% 75%, #FDD528 1px, transparent 1px)`,
+              backgroundSize: '50px 50px'
+            }}></div>
           </div>
 
-          {/* Right: Product Info */}
-          <div className="flex flex-col justify-center space-y-6">
-            <div>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="inline-block bg-pian-red text-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
-                  {product.category}
+          <div className="relative z-10 px-8 py-8 text-center">
+            <div className="flex flex-wrap justify-center gap-2 mb-4">
+              <span className="inline-block bg-pian-yellow text-pian-black px-4 py-2 text-xs font-bold uppercase tracking-wider font-barlow-condensed">
+                {product.category}
+              </span>
+              {product.type && (
+                <span className="inline-block bg-pian-red text-white px-4 py-2 text-xs font-bold uppercase tracking-wider font-barlow-condensed">
+                  {product.type}
                 </span>
-                {product.type && (
-                  <span className="inline-block bg-pian-black text-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
-                    {product.type}
-                  </span>
-                )}
-              </div>
-              <h1 className="text-4xl lg:text-5xl font-black text-pian-black font-barlow-condensed uppercase tracking-tight leading-tight mb-4">
-                {product.name}
-              </h1>
+              )}
             </div>
 
-            {/* Tabs Navigation */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => setActiveTab('description')}
-                className={`flex items-center gap-2 px-6 py-3 font-bold font-barlow-condensed uppercase text-sm transition-all duration-300 ${
-                  activeTab === 'description'
-                    ? 'bg-pian-red text-white shadow-lg'
-                    : 'bg-white text-pian-black border-2 border-gray-200 hover:border-pian-red'
-                }`}
-              >
-                <Award className="h-4 w-4" />
-                Descrição
-                {activeTab === 'description' && <ChevronRight className="h-4 w-4" />}
-              </button>
-              <button
-                onClick={() => setActiveTab('composition')}
-                className={`flex items-center gap-2 px-6 py-3 font-bold font-barlow-condensed uppercase text-sm transition-all duration-300 ${
-                  activeTab === 'composition'
-                    ? 'bg-pian-red text-white shadow-lg'
-                    : 'bg-white text-pian-black border-2 border-gray-200 hover:border-pian-red'
-                }`}
-              >
-                <Beef className="h-4 w-4" />
-                Composição
-                {activeTab === 'composition' && <ChevronRight className="h-4 w-4" />}
-              </button>
-              <button
-                onClick={() => setActiveTab('nutritional')}
-                className={`flex items-center gap-2 px-6 py-3 font-bold font-barlow-condensed uppercase text-sm transition-all duration-300 ${
-                  activeTab === 'nutritional'
-                    ? 'bg-pian-red text-white shadow-lg'
-                    : 'bg-white text-pian-black border-2 border-gray-200 hover:border-pian-red'
-                }`}
-              >
-                <Activity className="h-4 w-4" />
-                Nutricional
-                {activeTab === 'nutritional' && <ChevronRight className="h-4 w-4" />}
-              </button>
-            </div>
+            <h1 className="text-4xl md:text-5xl font-black text-white mb-4 font-barlow-condensed uppercase tracking-wider">
+              {product.name}
+            </h1>
+
+            <div className="w-24 h-1 bg-pian-red mx-auto"></div>
           </div>
         </div>
 
-        {/* Bottom Section - Tab Content */}
-        <div className="flex-1 overflow-y-auto bg-gray-50">
-          <div className="p-8 lg:p-12 max-w-5xl mx-auto">
-            {renderTabContent()}
+        {/* Content Area */}
+        <div className="overflow-y-auto max-h-[calc(90vh-200px)] bg-white">
+          <div className="p-8 lg:p-12">
+            {/* Product Image Card */}
+            <div className="max-w-2xl mx-auto mb-8">
+              <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                  <div className="flex items-center justify-center">
+                    <Package className="h-6 w-6 text-pian-black mr-3" />
+                    <h2 className="text-xl font-bold text-pian-black font-barlow-condensed uppercase">
+                      Imagem do Produto
+                    </h2>
+                  </div>
+                </div>
+
+                <div className="p-8 bg-white">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full h-64 object-contain mx-auto transform hover:scale-105 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.src = '/fallback-product.svg';
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Information Sections */}
+            <div className="max-w-4xl mx-auto space-y-6">
+              {/* Descrição */}
+              {sections.descricao && (
+                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Award className="h-6 w-6 text-pian-black mr-3" />
+                      <h2 className="text-xl font-bold text-pian-black font-barlow-condensed uppercase">
+                        Descrição
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-6 bg-white">
+                    <div className="text-gray-800 leading-relaxed">
+                      {formatText(sections.descricao)}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Diferenciais */}
+              {sections.diferenciais && (
+                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Award className="h-6 w-6 text-white mr-3" />
+                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
+                        Diferenciais
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-6 bg-white">
+                    <ul className="space-y-2 text-gray-800">
+                      {formatText(sections.diferenciais)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Composição */}
+              {sections.composicao && (
+                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Beef className="h-6 w-6 text-white mr-3" />
+                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
+                        Composição Básica
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-6 bg-white">
+                    <div className="text-gray-800 text-sm leading-relaxed">
+                      {formatText(sections.composicao)}
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Enriquecimento */}
+              {sections.enriquecimento && (
+                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Activity className="h-6 w-6 text-white mr-3" />
+                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
+                        Enriquecimento Mínimo por KG
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-6 bg-white">
+                    <ul className="space-y-1.5 text-sm text-gray-800 leading-relaxed">
+                      {formatText(sections.enriquecimento)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
+              {/* Níveis de Garantia */}
+              {sections.niveis && (
+                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Package className="h-6 w-6 text-white mr-3" />
+                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
+                        Níveis de Garantia
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-6 bg-white">
+                    <ul className="space-y-1.5 text-sm text-gray-800 leading-relaxed">
+                      {formatText(sections.niveis)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
