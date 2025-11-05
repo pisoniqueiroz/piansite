@@ -12,7 +12,7 @@ const BlogSection = () => {
       id: 1,
       title: 'Como escolher a ração ideal para seu cão',
       excerpt: 'Guia completo com critérios científicos e práticos para escolher a melhor alimentação para seu cão em cada fase da vida.',
-      image: 'https://images.pexels.com/photos/4587998/pexels-photo-4587998.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '18 de Novembro, 2025',
       readTime: '8 min',
       category: 'Nutrição',
@@ -99,7 +99,7 @@ const BlogSection = () => {
       id: 2,
       title: 'Alimentação de filhotes: guia completo',
       excerpt: 'Protocolo detalhado de nutrição para filhotes desde o nascimento até a fase adulta, com cronogramas e quantidades específicas para cada raça.',
-      image: 'https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '15 de Novembro, 2025',
       readTime: '10 min',
       category: 'Cuidados',
@@ -234,7 +234,7 @@ const BlogSection = () => {
       id: 3,
       title: 'Cuidados especiais com cães idosos',
       excerpt: 'Aprenda como adaptar a alimentação e cuidados para garantir qualidade de vida na terceira idade.',
-      image: 'https://images.pexels.com/photos/2253275/pexels-photo-2253275.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/3785428/pexels-photo-3785428.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '12 de Novembro, 2025',
       readTime: '9 min',
       category: 'Saúde',
@@ -273,7 +273,7 @@ const BlogSection = () => {
       id: 4,
       title: 'Nutrição felina: necessidades especiais dos gatos',
       excerpt: 'Guia científico completo sobre as necessidades nutricionais únicas dos felinos como carnívoros obrigatórios, incluindo nutrientes essenciais e estratégias de hidratação.',
-      image: 'https://images.pexels.com/photos/1170986/pexels-photo-1170986.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/2558605/pexels-photo-2558605.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '10 de Novembro, 2025',
       readTime: '9 min',
       category: 'Nutrição',
@@ -307,7 +307,7 @@ const BlogSection = () => {
       id: 5,
       title: 'Hidratação: a importância da água para pets',
       excerpt: 'Descubra por que a hidratação adequada é fundamental para a saúde do seu pet e como estimulá-la.',
-      image: 'https://images.pexels.com/photos/1805164/pexels-photo-1805164.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/1346086/pexels-photo-1346086.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '8 de Novembro, 2025',
       readTime: '7 min',
       category: 'Saúde',
@@ -348,7 +348,7 @@ const BlogSection = () => {
       id: 6,
       title: 'Transição alimentar: como mudar a ração sem estresse',
       excerpt: 'Aprenda o método correto para fazer a transição alimentar e evitar problemas digestivos.',
-      image: 'https://images.pexels.com/photos/4498185/pexels-photo-4498185.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/3726314/pexels-photo-3726314.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '5 de Novembro, 2025',
       readTime: '8 min',
       category: 'Cuidados',
@@ -387,7 +387,7 @@ const BlogSection = () => {
       id: 7,
       title: 'Obesidade em pets: prevenção e tratamento',
       excerpt: 'Protocolo completo de prevenção e reversão da obesidade canina e felina, com estratégias nutricionais e planos de exercícios personalizados.',
-      image: 'https://images.pexels.com/photos/3687770/pexels-photo-3687770.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/7210754/pexels-photo-7210754.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '2 de Novembro, 2025',
       readTime: '10 min',
       category: 'Saúde',
@@ -429,7 +429,7 @@ const BlogSection = () => {
       id: 8,
       title: 'Alergias alimentares em pets: identificação e manejo',
       excerpt: 'Como reconhecer sinais de alergia alimentar e quais medidas tomar para o bem-estar do seu pet.',
-      image: 'https://images.pexels.com/photos/4498300/pexels-photo-4498300.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/1564506/pexels-photo-1564506.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '30 de Outubro, 2025',
       readTime: '9 min',
       category: 'Saúde',
@@ -474,7 +474,7 @@ const BlogSection = () => {
       id: 9,
       title: 'Benefícios da ração úmida para pets',
       excerpt: 'Conheça as vantagens dos alimentos úmidos e como incorporá-los na dieta do seu pet.',
-      image: 'https://images.pexels.com/photos/4498296/pexels-photo-4498296.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/3274905/pexels-photo-3274905.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '28 de Outubro, 2025',
       readTime: '8 min',
       category: 'Nutrição',
@@ -511,7 +511,7 @@ const BlogSection = () => {
       id: 10,
       title: 'Exercícios e alimentação: a dupla perfeita',
       excerpt: 'Como equilibrar atividade física e nutrição para manter seu pet saudável e em forma.',
-      image: 'https://images.pexels.com/photos/1629781/pexels-photo-1629781.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/1612847/pexels-photo-1612847.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '25 de Outubro, 2025',
       readTime: '9 min',
       category: 'Comportamento',
@@ -553,7 +553,7 @@ const BlogSection = () => {
       id: 11,
       title: 'Petiscos saudáveis: como escolher e quando oferecer',
       excerpt: 'Guia completo sobre petiscos: tipos, frequência e como usar na educação do seu pet.',
-      image: 'https://images.pexels.com/photos/4498307/pexels-photo-4498307.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/5255232/pexels-photo-5255232.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '22 de Outubro, 2025',
       readTime: '7 min',
       category: 'Cuidados',
@@ -600,7 +600,7 @@ const BlogSection = () => {
       id: 12,
       title: 'Saúde dental: alimentação e cuidados bucais',
       excerpt: 'A importância da saúde bucal dos pets e como a alimentação pode ajudar na prevenção.',
-      image: 'https://images.pexels.com/photos/4498299/pexels-photo-4498299.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://images.pexels.com/photos/406014/pexels-photo-406014.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '20 de Outubro, 2025',
       readTime: '8 min',
       category: 'Saúde',
@@ -704,11 +704,7 @@ const BlogSection = () => {
                   {post.excerpt}
                 </p>
                 
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4 font-bold font-barlow-condensed">
-                  <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-1" />
-                    <span>{post.readTime}</span>
-                  </div>
+                <div className="flex items-center justify-end text-sm text-gray-500 mb-4">
                   <button
                     onClick={(e) => handleShare(post, e)}
                     className="p-2 bg-black text-white rounded-full hover:bg-gray-800 transition-colors duration-200 shadow-lg"

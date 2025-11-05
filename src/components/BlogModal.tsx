@@ -99,10 +99,6 @@ const BlogModal: React.FC<BlogModalProps> = ({ article, isOpen, onClose }) => {
                 <Calendar className="h-4 w-4 mr-1" />
                 <span>{article.date}</span>
               </div>
-              <div className="flex items-center">
-                <Clock className="h-4 w-4 mr-1" />
-                <span>{article.readTime}</span>
-              </div>
             </div>
           </div>
         </div>
@@ -153,13 +149,14 @@ const BlogModal: React.FC<BlogModalProps> = ({ article, isOpen, onClose }) => {
           </div>
 
           {/* Article content */}
-          <div 
-            className="prose prose-lg max-w-none font-montserrat mx-auto"
+          <article
+            className="prose prose-lg max-w-none font-montserrat mx-auto blog-article-content"
             dangerouslySetInnerHTML={{ __html: article.content }}
             style={{
-              lineHeight: '1.8',
-              color: '#374151',
-              maxWidth: '65ch'
+              lineHeight: '1.9',
+              color: '#1f2937',
+              maxWidth: '70ch',
+              fontSize: '1.125rem'
             }}
           />
 

@@ -157,54 +157,102 @@ h6, .h6 {
   animation-play-state: paused;
 }
 
-/* Modal content styling */
-.modal-content .prose {
+/* Modal content styling - Layout de leitura profissional */
+.blog-article-content {
   font-weight: 400;
-}
-
-.modal-content .prose h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
   color: #1f2937;
 }
 
-.modal-content .prose h3 {
+.blog-article-content h2 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 1.25rem;
+  color: #0f172a;
+  border-bottom: 3px solid #FDD528;
+  padding-bottom: 0.5rem;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+
+.blog-article-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #1e293b;
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.4;
+}
+
+.blog-article-content h4 {
   font-size: 1.25rem;
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  color: #334155;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.blog-article-content p {
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+  line-height: 1.9;
+  text-align: justify;
   color: #374151;
-}
-
-.modal-content .prose h4 {
   font-size: 1.125rem;
-  font-weight: 500;
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #4b5563;
 }
 
-.modal-content .prose p {
-  margin-bottom: 1.25rem;
+.blog-article-content ul {
+  margin: 1.75rem 0;
+  padding-left: 2rem;
+  list-style-type: disc;
+}
+
+.blog-article-content li {
+  margin-bottom: 0.875rem;
   font-weight: 400;
   line-height: 1.8;
+  color: #374151;
+  padding-left: 0.5rem;
 }
 
-.modal-content .prose ul {
-  margin: 1.25rem 0;
-  padding-left: 1.5rem;
+.blog-article-content li::marker {
+  color: #FDD528;
+  font-size: 1.2em;
 }
 
-.modal-content .prose li {
-  margin-bottom: 0.5rem;
-  font-weight: 400;
+.blog-article-content strong {
+  font-weight: 700;
+  color: #0f172a;
 }
 
-.modal-content .prose strong {
-  font-weight: 600;
-  color: #1f2937;
+/* Primeiro parágrafo com destaque */
+.blog-article-content h2 + p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+  margin-bottom: 2rem;
+}
+
+/* Espaçamento entre seções */
+.blog-article-content h2:not(:first-child) {
+  margin-top: 3rem;
+}
+
+/* Estilo para links dentro do conteúdo */
+.blog-article-content a {
+  color: #C4080A;
+  text-decoration: underline;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.blog-article-content a:hover {
+  color: #dc2626;
 }
 
 /* Custom animations */
