@@ -69,8 +69,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
           <div className="absolute top-6 left-0 right-0 h-1 bg-gray-200 rounded-full"></div>
           
           {/* Animated Progress Line */}
-          <motion.div 
-            className="absolute top-6 left-0 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-orange-500 rounded-full"
+          <motion.div
             className="absolute top-6 left-0 h-1 bg-gradient-to-r from-red-500 via-red-600 to-red-700 rounded-full"
             style={{ width: `${progressPercentage}%` }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
