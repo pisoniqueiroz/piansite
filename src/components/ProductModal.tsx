@@ -141,7 +141,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
           <div className="p-8 lg:p-12">
             {/* Product Image Card */}
             <div className="max-w-2xl mx-auto mb-8">
-              <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+              <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                 <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
                   <div className="flex items-center justify-center">
@@ -168,9 +168,30 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
             {/* Information Sections */}
             <div className="max-w-4xl mx-auto space-y-6">
+              {/* Diferenciais - DESTAQUE */}
+              {sections.diferenciais && (
+                <div className="backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 ring-4 ring-pian-red/30">
+                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-8 py-6 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Award className="h-8 w-8 text-white mr-4 animate-pulse" />
+                      <h2 className="text-2xl font-black text-white font-barlow-condensed uppercase tracking-wider">
+                        Diferenciais do Produto
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-8 bg-gradient-to-br from-red-50 to-white">
+                    <ul className="space-y-3 text-gray-900 text-base font-medium">
+                      {formatText(sections.diferenciais)}
+                    </ul>
+                  </div>
+                </div>
+              )}
+
               {/* Descrição */}
               {sections.descricao && (
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
                     <div className="flex items-center justify-center">
@@ -189,30 +210,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 </div>
               )}
 
-              {/* Diferenciais */}
-              {sections.diferenciais && (
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
-                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-6 py-4 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
-                    <div className="flex items-center justify-center">
-                      <Award className="h-6 w-6 text-white mr-3" />
-                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
-                        Diferenciais
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div className="px-8 py-6 bg-white">
-                    <ul className="space-y-2 text-gray-800">
-                      {formatText(sections.diferenciais)}
-                    </ul>
-                  </div>
-                </div>
-              )}
-
               {/* Composição */}
               {sections.composicao && (
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
                     <div className="flex items-center justify-center">
@@ -233,7 +233,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
               {/* Enriquecimento */}
               {sections.enriquecimento && (
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
                     <div className="flex items-center justify-center">
@@ -254,7 +254,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
               {/* Níveis de Garantia */}
               {sections.niveis && (
-                <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500">
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
                     <div className="flex items-center justify-center">
