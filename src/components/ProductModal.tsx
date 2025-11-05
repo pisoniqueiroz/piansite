@@ -1,5 +1,5 @@
-import React from 'react';
-import { X } from 'lucide-react';
+import React, { useState } from 'react';
+import { X, ChevronRight, Package, Award, Beef, Activity } from 'lucide-react';
 
 interface ProductModalProps {
   product: {
@@ -16,6 +16,8 @@ interface ProductModalProps {
 }
 
 const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose }) => {
+  const [activeTab, setActiveTab] = useState<'description' | 'composition' | 'nutritional'>('description');
+
   if (!isOpen) return null;
 
   const parseDescription = (description: string) => {
@@ -94,46 +96,108 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
   const sections = parseDescription(product.description);
 
-  return (
-    <div className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-in fade-in duration-200">
-      <div className="bg-white max-w-6xl w-full max-h-[90vh] overflow-y-auto shadow-2xl transform transition-all animate-in slide-in-from-bottom-4 duration-300">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-pian-red to-red-700 text-white p-8 relative sticky top-0 z-10 shadow-lg">
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 p-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white transition-all duration-200 group"
-            aria-label="Fechar"
-          >
-            <X className="h-6 w-6 group-hover:rotate-90 transition-transform duration-200" />
-          </button>
-
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl md:text-5xl font-black mb-4 font-barlow-condensed uppercase tracking-wide drop-shadow-lg">
-              {product.name}
-            </h1>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="bg-white/20 backdrop-blur-sm text-white px-5 py-2 text-sm font-bold uppercase tracking-wide border border-white/30">
-                {product.category}
-              </span>
-              {product.type && (
-                <span className="bg-pian-black text-white px-5 py-2 text-sm font-bold uppercase tracking-wide">
-                  {product.type}
-                </span>
-              )}
-            </div>
+  const renderTabContent = () => {
+    switch (activeTab) {
+      case 'description':
+        return (
+          <div className="space-y-6">
+            {sections.descricao && (
+              <div>
+                <div className="text-gray-800 leading-relaxed text-base space-y-3">
+                  {formatText(sections.descricao)}
+                </div>
+              </div>
+            )}
+            {sections.diferenciais && (
+              <div className="mt-8 bg-red-50 border border-pian-red/20 p-6 rounded-lg">
+                <div className="flex items-center gap-3 mb-4">
+                  <Award className="h-6 w-6 text-pian-red" />
+                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
+                    Diferenciais do Produto
+                  </h3>
+                </div>
+                <ul className="space-y-2 text-gray-700">
+                  {formatText(sections.diferenciais)}
+                </ul>
+              </div>
+            )}
           </div>
-        </div>
+        );
+      case 'composition':
+        return (
+          <div>
+            {sections.composicao && (
+              <div className="bg-white rounded-lg p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Beef className="h-6 w-6 text-pian-red" />
+                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
+                    Ingredientes
+                  </h3>
+                </div>
+                <div className="text-gray-700 text-sm leading-relaxed">
+                  {formatText(sections.composicao)}
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      case 'nutritional':
+        return (
+          <div className="space-y-6">
+            {sections.enriquecimento && (
+              <div className="bg-white rounded-lg p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Activity className="h-6 w-6 text-pian-red" />
+                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
+                    Enriquecimento Mínimo por KG
+                  </h3>
+                </div>
+                <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed">
+                  {formatText(sections.enriquecimento)}
+                </ul>
+              </div>
+            )}
+            {sections.niveis && (
+              <div className="bg-white rounded-lg p-6 border border-gray-200">
+                <div className="flex items-center gap-3 mb-4">
+                  <Package className="h-6 w-6 text-pian-red" />
+                  <h3 className="text-xl font-black text-pian-black uppercase font-barlow-condensed">
+                    Níveis de Garantia
+                  </h3>
+                </div>
+                <ul className="space-y-1.5 text-sm text-gray-700 leading-relaxed">
+                  {formatText(sections.niveis)}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+    }
+  };
 
-        {/* Content */}
-        <div className="p-6 md:p-10 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-4xl mx-auto">
-            {/* Product Image */}
-            <div className="mb-10 flex justify-center">
-              <div className="w-full max-w-md h-80 bg-white rounded-lg p-8 flex items-center justify-center shadow-xl border-l-4 border-pian-red">
+  return (
+    <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+      <div className="bg-white max-w-7xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+        {/* Close Button - Fixed Top Right */}
+        <button
+          onClick={onClose}
+          className="absolute top-6 right-6 z-20 p-3 bg-pian-black/90 hover:bg-pian-red text-white transition-all duration-200 group rounded-full shadow-lg"
+          aria-label="Fechar"
+        >
+          <X className="h-6 w-6 group-hover:rotate-90 transition-transform duration-200" />
+        </button>
+
+        {/* Top Section - Product Hero */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12 bg-gradient-to-br from-gray-50 to-white border-b-4 border-pian-red">
+          {/* Left: Product Image */}
+          <div className="flex items-center justify-center">
+            <div className="relative w-full max-w-md">
+              <div className="absolute inset-0 bg-gradient-to-br from-pian-red/20 to-orange-500/20 blur-3xl"></div>
+              <div className="relative bg-white rounded-2xl p-8 shadow-xl">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-contain transform hover:scale-105 transition-transform duration-300"
+                  className="w-full h-80 object-contain transform hover:scale-105 transition-transform duration-500"
                   onError={(e) => {
                     const target = e.currentTarget;
                     target.src = '/fallback-product.svg';
@@ -141,87 +205,72 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 />
               </div>
             </div>
+          </div>
 
-            {/* DESCRIÇÃO */}
-            {sections.descricao && (
-              <div className="mb-8 bg-white border-l-4 border-pian-red p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-2 h-8 bg-pian-red mr-3"></div>
-                  <h2 className="text-2xl md:text-3xl font-black text-pian-black uppercase tracking-wide font-barlow-condensed">
-                    Descrição
-                  </h2>
-                </div>
-                <div className="text-gray-700 leading-relaxed text-base">
-                  {formatText(sections.descricao)}
-                </div>
+          {/* Right: Product Info */}
+          <div className="flex flex-col justify-center space-y-6">
+            <div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                <span className="inline-block bg-pian-red text-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
+                  {product.category}
+                </span>
+                {product.type && (
+                  <span className="inline-block bg-pian-black text-white px-4 py-2 text-xs font-bold uppercase tracking-wider">
+                    {product.type}
+                  </span>
+                )}
               </div>
-            )}
+              <h1 className="text-4xl lg:text-5xl font-black text-pian-black font-barlow-condensed uppercase tracking-tight leading-tight mb-4">
+                {product.name}
+              </h1>
+            </div>
 
-            {/* DIFERENCIAIS */}
-            {sections.diferenciais && (
-              <div className="mb-8 bg-gradient-to-br from-red-50 to-orange-50 border-l-4 border-pian-red p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-2 h-8 bg-pian-red mr-3"></div>
-                  <h2 className="text-2xl md:text-3xl font-black text-pian-black uppercase tracking-wide font-barlow-condensed">
-                    Diferenciais
-                  </h2>
-                </div>
-                <div className="text-gray-700">
-                  <ul className="space-y-2.5 text-base">
-                    {formatText(sections.diferenciais)}
-                  </ul>
-                </div>
-              </div>
-            )}
+            {/* Tabs Navigation */}
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveTab('description')}
+                className={`flex items-center gap-2 px-6 py-3 font-bold font-barlow-condensed uppercase text-sm transition-all duration-300 ${
+                  activeTab === 'description'
+                    ? 'bg-pian-red text-white shadow-lg'
+                    : 'bg-white text-pian-black border-2 border-gray-200 hover:border-pian-red'
+                }`}
+              >
+                <Award className="h-4 w-4" />
+                Descrição
+                {activeTab === 'description' && <ChevronRight className="h-4 w-4" />}
+              </button>
+              <button
+                onClick={() => setActiveTab('composition')}
+                className={`flex items-center gap-2 px-6 py-3 font-bold font-barlow-condensed uppercase text-sm transition-all duration-300 ${
+                  activeTab === 'composition'
+                    ? 'bg-pian-red text-white shadow-lg'
+                    : 'bg-white text-pian-black border-2 border-gray-200 hover:border-pian-red'
+                }`}
+              >
+                <Beef className="h-4 w-4" />
+                Composição
+                {activeTab === 'composition' && <ChevronRight className="h-4 w-4" />}
+              </button>
+              <button
+                onClick={() => setActiveTab('nutritional')}
+                className={`flex items-center gap-2 px-6 py-3 font-bold font-barlow-condensed uppercase text-sm transition-all duration-300 ${
+                  activeTab === 'nutritional'
+                    ? 'bg-pian-red text-white shadow-lg'
+                    : 'bg-white text-pian-black border-2 border-gray-200 hover:border-pian-red'
+                }`}
+              >
+                <Activity className="h-4 w-4" />
+                Nutricional
+                {activeTab === 'nutritional' && <ChevronRight className="h-4 w-4" />}
+              </button>
+            </div>
+          </div>
+        </div>
 
-            {/* COMPOSIÇÃO BÁSICA */}
-            {sections.composicao && (
-              <div className="mb-8 bg-white border-l-4 border-gray-600 p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-2 h-8 bg-gray-600 mr-3"></div>
-                  <h2 className="text-2xl md:text-3xl font-black text-pian-black uppercase tracking-wide font-barlow-condensed">
-                    Composição Básica
-                  </h2>
-                </div>
-                <div className="text-gray-700 text-sm leading-relaxed">
-                  {formatText(sections.composicao)}
-                </div>
-              </div>
-            )}
-
-            {/* ENRIQUECIMENTO MÍNIMO POR KG */}
-            {sections.enriquecimento && (
-              <div className="mb-8 bg-gradient-to-br from-gray-50 to-gray-100 border-l-4 border-gray-600 p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-2 h-8 bg-gray-600 mr-3"></div>
-                  <h2 className="text-2xl md:text-3xl font-black text-pian-black uppercase tracking-wide font-barlow-condensed">
-                    Enriquecimento Mínimo por KG
-                  </h2>
-                </div>
-                <div className="text-gray-700">
-                  <ul className="space-y-1.5 text-sm leading-relaxed">
-                    {formatText(sections.enriquecimento)}
-                  </ul>
-                </div>
-              </div>
-            )}
-
-            {/* NÍVEIS DE GARANTIA */}
-            {sections.niveis && (
-              <div className="mb-8 bg-white border-l-4 border-gray-600 p-6 md:p-8 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="flex items-center mb-4">
-                  <div className="w-2 h-8 bg-gray-600 mr-3"></div>
-                  <h2 className="text-2xl md:text-3xl font-black text-pian-black uppercase tracking-wide font-barlow-condensed">
-                    Níveis de Garantia
-                  </h2>
-                </div>
-                <div className="text-gray-700">
-                  <ul className="space-y-1.5 text-sm leading-relaxed">
-                    {formatText(sections.niveis)}
-                  </ul>
-                </div>
-              </div>
-            )}
+        {/* Bottom Section - Tab Content */}
+        <div className="flex-1 overflow-y-auto bg-gray-50">
+          <div className="p-8 lg:p-12 max-w-5xl mx-auto">
+            {renderTabContent()}
           </div>
         </div>
       </div>
