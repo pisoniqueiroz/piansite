@@ -8,36 +8,36 @@ const ProductLineCarousel = () => {
 
   const slideData = [
     {
-      title: "Linha Standard",
-      description: "Qualidade premium com excelente custo-benefício",
-      category: "Standard",
-      icon: <Star className="h-6 w-6" />,
-      gradient: "from-blue-500 to-blue-600",
-      src: "/banner-pian-feed.png",
-    },
-    {
-      title: "Linha Premium",
-      description: "Nutrição superior com ingredientes premium",
-      category: "Premium",
-      icon: <Award className="h-6 w-6" />,
-      gradient: "from-yellow-500 to-yellow-600",
-      src: "https://i.postimg.cc/NMnKBmJy/1.png",
-    },
-    {
-      title: "Linha Premium Especial",
-      description: "Máxima nutrição com fórmulas especiais",
-      category: "Premium Especial",
-      icon: <Crown className="h-6 w-6" />,
-      gradient: "from-purple-500 to-purple-600",
-      src: "https://i.postimg.cc/tR15P5HM/3.png",
-    },
-    {
       title: "Linha Super Premium",
       description: "Prioritá - O máximo em tecnologia nutricional",
       category: "Super Premium",
       icon: <Gem className="h-6 w-6" />,
       gradient: "from-yellow-400 to-yellow-500",
       src: "https://i.postimg.cc/fL0kBkCY/O-que-ha-de-mais-avanc-ado-em-nutric-a-o-animal.png",
+    },
+    {
+      title: "Linha Premium Especial",
+      description: "Máxima nutrição com fórmulas especiais",
+      category: "Premium Especial",
+      icon: <Crown className="h-6 w-6" />,
+      gradient: "from-orange-500 to-orange-600",
+      src: "https://i.postimg.cc/tR15P5HM/3.png",
+    },
+    {
+      title: "Linha Premium",
+      description: "Nutrição superior com ingredientes premium",
+      category: "Premium",
+      icon: <Award className="h-6 w-6" />,
+      gradient: "from-red-600 to-red-700",
+      src: "https://i.postimg.cc/NMnKBmJy/1.png",
+    },
+    {
+      title: "Linha Standard",
+      description: "Qualidade premium com excelente custo-benefício",
+      category: "Standard",
+      icon: <Star className="h-6 w-6" />,
+      gradient: "from-gray-600 to-gray-700",
+      src: "/banner-pian-feed.png",
     }
   ];
 
