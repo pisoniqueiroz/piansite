@@ -6,7 +6,7 @@ import ProductModal from './ProductModal';
 import { supabase, Product } from '../lib/supabase';
 
 const ProductSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
+  const [selectedCategory, setSelectedCategory] = useState('Cachorros');
   const [selectedLine, setSelectedLine] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -19,16 +19,15 @@ const ProductSection = () => {
     const categoryParam = new URLSearchParams(location.search).get('category');
     if (categoryParam) {
       const categoryMap: { [key: string]: string } = {
-        'Standard': 'Standard',
-        'Premium': 'Premium',
-        'Premium Especial': 'Premium Especial',
-        'Super Premium': 'Super Premium',
         'Gatos': 'Gatos',
         'Cachorros': 'Cachorros',
-        'Cães': 'Cachorros'
+        'Cães': 'Cachorros',
+        'Peixes': 'Peixes',
+        'Alimentos Úmidos': 'Alimentos Úmidos',
+        'Snacks': 'Snacks'
       };
 
-      const mappedCategory = categoryMap[categoryParam] || categoryParam;
+      const mappedCategory = categoryMap[categoryParam] || 'Cachorros';
       setSelectedCategory(mappedCategory);
     }
   }, [location.search]);
@@ -58,7 +57,6 @@ const ProductSection = () => {
 
   // Categorias principais
   const mainCategories = [
-    { name: 'Todos', icon: null, color: 'bg-gray-100 text-pian-black' },
     { name: 'Cachorros', icon: <Dog className="h-4 w-4" />, color: 'bg-blue-100 text-blue-800' },
     { name: 'Gatos', icon: <Cat className="h-4 w-4" />, color: 'bg-green-100 text-green-800' },
     { name: 'Peixes', icon: <Fish className="h-4 w-4" />, color: 'bg-teal-100 text-teal-800' },
@@ -68,9 +66,6 @@ const ProductSection = () => {
 
   // Linhas de ração baseadas na categoria selecionada
   const getAvailableLines = (category: string) => {
-    if (category === 'Todos') {
-      return [];
-    }
     if (category === 'Cachorros' || category === 'Gatos') {
       return [
         { name: 'Super Premium', color: 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white' },
@@ -79,9 +74,10 @@ const ProductSection = () => {
         { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
       ];
     }
-    if (category === 'Alimentos Úmidos') {
+    if (category === 'Alimentos Úmidos' || category === 'Snacks') {
       return [
         { name: 'Premium', color: 'bg-orange-100 text-orange-800' },
+        { name: 'Standard', color: 'bg-blue-100 text-blue-800' },
       ];
     }
     if (category === 'Peixes') {
@@ -99,9 +95,7 @@ const ProductSection = () => {
 
     let matchesCategory = false;
 
-    if (selectedCategory === 'Todos') {
-      matchesCategory = true;
-    } else if (selectedCategory === 'Cachorros') {
+    if (selectedCategory === 'Cachorros') {
       matchesCategory = product.category === 'Cães';
     } else if (selectedCategory === 'Gatos') {
       matchesCategory = product.category === 'Gatos';
@@ -175,18 +169,8 @@ const ProductSection = () => {
         </div>
 
         {/* Line Filter */}
-        {selectedCategory !== 'Todos' && getAvailableLines(selectedCategory).length > 0 && (
+        {getAvailableLines(selectedCategory).length > 0 && (
           <div className="flex flex-wrap justify-center gap-3 mb-16">
-            <button
-              onClick={() => setSelectedLine('')}
-              className={`px-6 py-3 transition-all duration-300 font-bold font-barlow-condensed border-2 ${
-                !selectedLine
-                  ? 'bg-pian-red text-white shadow-lg scale-105 border-pian-red'
-                  : 'bg-white text-pian-black border-pian-black/20 hover:bg-pian-black/5 hover:scale-105 hover:border-pian-red'
-              }`}
-            >
-              Todas as Linhas
-            </button>
             {getAvailableLines(selectedCategory).map((line) => (
               <button
                 key={line.name}
@@ -224,16 +208,12 @@ const ProductSection = () => {
               <Search className="h-16 w-16 text-pian-black/50 mx-auto mb-4" />
               <h3 className="text-xl font-bold text-pian-black mb-2 font-bold font-barlow-condensed">Nenhum produto encontrado</h3>
               <p className="text-pian-black/70 mb-4 font-bold font-barlow-condensed">
-                {selectedCategory
-                  ? `Não encontramos produtos para "${selectedCategory}"${selectedLine ? ` na linha "${selectedLine}"` : ''}`
-                  : 'Tente ajustar os filtros ou termo de busca'
-                }
+                {`Não encontramos produtos para "${selectedCategory}"${selectedLine ? ` na linha "${selectedLine}"` : ''}`}
               </p>
               <button
-                onClick={() => { 
-                  setSearchTerm(''); 
-                  setSelectedCategory('Todos'); 
-                  setSelectedLine(''); 
+                onClick={() => {
+                  setSearchTerm('');
+                  setSelectedLine('');
                 }}
                 className="px-8 py-4 bg-pian-red text-white hover:bg-red-700 font-bold font-barlow-condensed shadow-lg hover:shadow-xl transition-all duration-300"
               >
