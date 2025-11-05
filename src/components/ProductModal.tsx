@@ -172,71 +172,23 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
             {/* Information Sections */}
             <div className="max-w-4xl mx-auto space-y-6">
-              {/* DIFERENCIAIS - DESTAQUE MÁXIMO ABSOLUTO */}
+              {/* Diferenciais */}
               {sections.diferenciais && (
-                <div className="relative mb-16 mt-8">
-                  {/* Múltiplos efeitos de brilho INTENSOS */}
-                  <div className="absolute -inset-8 bg-gradient-to-r from-red-600 via-pian-red to-red-600 rounded-[2.5rem] blur-3xl opacity-60 animate-pulse"></div>
-                  <div className="absolute -inset-6 bg-gradient-to-r from-pian-yellow via-yellow-400 to-pian-yellow rounded-[2.5rem] blur-2xl opacity-50 animate-pulse" style={{animationDelay: '0.3s', animationDuration: '1.5s'}}></div>
-                  <div className="absolute -inset-4 bg-gradient-to-r from-orange-500 via-red-500 to-orange-500 rounded-[2.5rem] blur-xl opacity-40 animate-pulse" style={{animationDelay: '0.6s', animationDuration: '2s'}}></div>
-
-                  <div className="relative rounded-[2rem] shadow-[0_0_80px_rgba(220,38,38,0.8)] overflow-hidden transform hover:scale-[1.05] transition-all duration-700 border-[6px] border-pian-yellow" style={{boxShadow: '0 0 100px rgba(220,38,38,0.9), 0 0 150px rgba(234,179,8,0.6), inset 0 0 30px rgba(255,255,255,0.1)'}}>
-
-                    {/* Badge SUPER DESTAQUE com animação */}
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 z-30">
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-pian-yellow blur-md animate-pulse"></div>
-                        <div className="relative bg-gradient-to-r from-pian-yellow via-yellow-300 to-pian-yellow text-pian-black px-12 py-3 rounded-full text-lg font-black uppercase tracking-[0.3em] shadow-2xl border-[5px] border-pian-red animate-bounce" style={{animationDuration: '1.5s'}}>
-                          🌟🌟🌟 DIFERENCIAIS 🌟🌟🌟
-                        </div>
-                      </div>
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Award className="h-6 w-6 text-white mr-3" />
+                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
+                        Diferenciais
+                      </h2>
                     </div>
+                  </div>
 
-                    {/* Cabeçalho GIGANTE com múltiplos efeitos */}
-                    <div className="bg-gradient-to-br from-pian-red via-red-600 to-pian-red px-12 py-16 relative overflow-hidden">
-                      {/* Efeitos de fundo animados */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent transform -skew-x-12 animate-shimmer"></div>
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.2),transparent_60%)] animate-pulse"></div>
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,255,255,0.2),transparent_60%)] animate-pulse" style={{animationDelay: '1s'}}></div>
-
-                      <div className="flex flex-col items-center justify-center text-center gap-6 relative z-10">
-                        {/* Ícone gigante com múltiplos aros */}
-                        <div className="relative">
-                          <div className="absolute inset-0 bg-pian-yellow/30 rounded-full animate-ping" style={{animationDuration: '2s'}}></div>
-                          <div className="absolute inset-0 bg-pian-yellow/20 rounded-full animate-ping" style={{animationDuration: '2.5s', animationDelay: '0.5s'}}></div>
-                          <div className="relative bg-gradient-to-br from-pian-yellow via-yellow-300 to-yellow-400 p-6 rounded-full shadow-2xl animate-pulse">
-                            <Award className="h-20 w-20 text-pian-red drop-shadow-2xl" />
-                          </div>
-                        </div>
-
-                        {/* Título ENORME */}
-                        <h2 className="text-5xl md:text-7xl font-black text-white font-barlow-condensed uppercase tracking-[0.2em] drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] leading-tight">
-                          DIFERENCIAIS
-                        </h2>
-                        <h3 className="text-3xl md:text-4xl font-black text-pian-yellow font-barlow-condensed uppercase tracking-widest drop-shadow-2xl">
-                          DO PRODUTO
-                        </h3>
-
-                        {/* Decoração animada */}
-                        <div className="flex gap-3 items-center mt-2">
-                          <div className="w-20 h-2 bg-pian-yellow rounded-full animate-pulse shadow-lg"></div>
-                          <div className="w-4 h-4 bg-white rounded-full animate-bounce"></div>
-                          <div className="w-32 h-2 bg-gradient-to-r from-pian-yellow to-yellow-300 rounded-full shadow-lg"></div>
-                          <div className="w-4 h-4 bg-white rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
-                          <div className="w-20 h-2 bg-pian-yellow rounded-full animate-pulse shadow-lg"></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Conteúdo com fundo especial */}
-                    <div className="px-12 py-14 bg-gradient-to-br from-yellow-50 via-white to-red-50 relative overflow-hidden">
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(234,179,8,0.1),transparent_50%)]"></div>
-                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(220,38,38,0.1),transparent_50%)]"></div>
-
-                      <ul className="space-y-6 text-gray-900 text-2xl font-black relative z-10">
-                        {formatText(sections.diferenciais)}
-                      </ul>
-                    </div>
+                  <div className="px-8 py-6 bg-white">
+                    <ul className="space-y-2 text-gray-800">
+                      {formatText(sections.diferenciais)}
+                    </ul>
                   </div>
                 </div>
               )}
