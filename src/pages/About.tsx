@@ -202,12 +202,12 @@ const About = () => {
             <h2 className="text-[75px] font-black text-gray-900 mb-6 font-barlow-condensed uppercase tracking-wider">Nossos Valores</h2>
           </div>
           
-          {/* Banner Nossas Referências */}
+          {/* Banner Nossos Diferenciais */}
           <div className="text-center">
-            <a href="https://postimg.cc/8FrZnNX2" target="_blank" rel="noopener noreferrer">
+            <a href="https://postimg.cc/3yrdc4pB" target="_blank" rel="noopener noreferrer">
               <img
-                src="https://i.postimg.cc/TPtB1PV3/Nossas-referencias-pian.png"
-                alt="Nossas-referencias-pian"
+                src="https://i.postimg.cc/5tLLj82Z/IMG-8503-1.png"
+                alt="Nossos Diferenciais - Pian"
                 className="w-full max-w-6xl mx-auto rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
               />
             </a>
