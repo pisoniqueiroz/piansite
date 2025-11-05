@@ -54,9 +54,6 @@ const Distributors = () => {
                     <h2 className="text-2xl md:text-3xl font-bold text-pian-black mb-1 font-bold font-barlow-condensed">
                       Área Restrita
                     </h2>
-                    <p className="text-pian-black/80 text-sm font-montserrat">
-                      Acesso exclusivo para distribuidores autorizados
-                    </p>
                   </div>
                 </div>
               </div>
