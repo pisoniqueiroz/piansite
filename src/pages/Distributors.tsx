@@ -63,17 +63,6 @@ const Distributors = () => {
               
               {/* Conteúdo do card */}
               <div className="px-8 py-12 text-center animate-fade-in-delay">
-                <div className="mb-8">
-                  <h3 className="text-xl font-bold text-white mb-3 font-bold font-barlow-condensed">
-                    Acesso exclusivo para distribuidores autorizados
-                  </h3>
-                  <p className="text-gray-300 max-w-2xl mx-auto leading-relaxed font-bold font-barlow-condensed">
-                    Acesse materiais exclusivos, catálogos atualizados, conteúdo técnico,
-                    treinamentos e muito mais material desenvolvido especialmente
-                    para nossos parceiros distribuidores.
-                  </p>
-                </div>
-
                 {/* Botão principal */}
                 <button
                   onClick={() => setShowPasswordModal(true)}
