@@ -27,27 +27,27 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
       diferenciais: ''
     };
 
-    const descMatch = description.match(/^(.*?)(?=##|$)/s);
+    const descMatch = description.match(/##\s*DESCRIÇÃO\s*([\s\S]*?)(?=##|$)/i);
     if (descMatch) {
       sections.descricao = descMatch[1].trim();
     }
 
-    const composicaoMatch = description.match(/## Composição Básica\s*([\s\S]*?)(?=##|$)/);
+    const composicaoMatch = description.match(/##\s*COMPOSIÇÃO BÁSICA\s*([\s\S]*?)(?=##|$)/i);
     if (composicaoMatch) {
       sections.composicao = composicaoMatch[1].trim();
     }
 
-    const enriquecimentoMatch = description.match(/## Enriquecimento Mínimo por KG\s*([\s\S]*?)(?=##|$)/);
+    const enriquecimentoMatch = description.match(/##\s*ENRIQUECIMENTO MÍNIMO POR KG\s*([\s\S]*?)(?=##|$)/i);
     if (enriquecimentoMatch) {
       sections.enriquecimento = enriquecimentoMatch[1].trim();
     }
 
-    const niveisMatch = description.match(/## Níveis de Garantia\s*([\s\S]*?)(?=##|$)/);
+    const niveisMatch = description.match(/##\s*NÍVEIS DE GARANTIA\s*([\s\S]*?)(?=##|$)/i);
     if (niveisMatch) {
       sections.niveis = niveisMatch[1].trim();
     }
 
-    const diferenciaisMatch = description.match(/## Diferenciais\s*([\s\S]*?)$/);
+    const diferenciaisMatch = description.match(/##\s*DIFERENCIAIS\s*([\s\S]*?)$/i);
     if (diferenciaisMatch) {
       sections.diferenciais = diferenciaisMatch[1].trim();
     }
@@ -81,6 +81,20 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
           <p key={index} className="text-gray-600 italic text-xs mt-2">
             {line}
           </p>
+        );
+      }
+
+      if (line.includes('|')) {
+        const items = line.split('|').map(item => item.trim()).filter(item => item);
+        return (
+          <div key={index} className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+            {items.map((item, i) => (
+              <div key={i} className="flex items-start gap-2 bg-gray-50 p-2 rounded-lg">
+                <span className="text-pian-red font-bold text-xs">•</span>
+                <span className="text-gray-800 text-xs leading-relaxed flex-1">{item}</span>
+              </div>
+            ))}
+          </div>
         );
       }
 
