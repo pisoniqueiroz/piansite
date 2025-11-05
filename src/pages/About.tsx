@@ -165,9 +165,9 @@ const About = () => {
           </div>
           <div className="max-w-6xl mx-auto prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6 font-montserrat">
             <p className="text-justify">
-              Com mais de 50 produtos distribuídos em 11 marcas, a Pian Alimentos está presente em todo o Brasil 
-              e exporta para países da América Latina e África. Nosso crescimento também se reflete na construção 
-              de uma rede sólida de parceiros comerciais e representantes, que compartilham de nossos valores e 
+              Com mais de 60 produtos distribuídos em 11 marcas, a Pian Alimentos está presente em todo o Brasil
+              e exporta para países da América Latina e África. Nosso crescimento também se reflete na construção
+              de uma rede sólida de parceiros comerciais e representantes, que compartilham de nossos valores e
               nos ajudam a levar nossa missão ainda mais longe.
             </p>
             <p className="text-justify">
