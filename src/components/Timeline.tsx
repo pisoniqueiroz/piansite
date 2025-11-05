@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { Timeline as TimelineUI } from './ui/timeline';
-import { Calendar, MapPin, Users, Award, Factory, Sparkles, Truck, Package, Globe, Zap, X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 
 const Timeline = () => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
@@ -19,12 +19,7 @@ const Timeline = () => {
       title: '1984',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-blue-500 to-blue-600 text-white mr-4">
-              <Factory className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-montserrat">Inicia a História da PIAN em Paraí-RS</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Inicia a História da PIAN em Paraí-RS</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -51,12 +46,7 @@ const Timeline = () => {
       title: '1987',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-green-500 to-green-600 text-white mr-4">
-              <MapPin className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">A PIAN Chega a Porto Alegre</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">A PIAN Chega a Porto Alegre</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -83,12 +73,7 @@ const Timeline = () => {
       title: '1995',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500 to-purple-600 text-white mr-4">
-              <Truck className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Primeiro Caminhão Baú</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Primeiro Caminhão Baú</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -115,12 +100,7 @@ const Timeline = () => {
       title: '1998',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white mr-4">
-              <Award className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Início das Vendas da Marca Mikdog</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Início das Vendas da Marca Mikdog</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -147,12 +127,7 @@ const Timeline = () => {
       title: '2000',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white mr-4">
-              <Factory className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">A Fábrica da PIAN é Construída em Paraí-RS</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">A Fábrica da PIAN é Construída em Paraí-RS</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -179,12 +154,7 @@ const Timeline = () => {
       title: '2006',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 text-white mr-4">
-              <Sparkles className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Primeira Ampliação do Parque Fabril e Início da Produção de Nuggets</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Primeira Ampliação do Parque Fabril e Início da Produção de Nuggets</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -211,12 +181,7 @@ const Timeline = () => {
       title: '2007',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 text-white mr-4">
-              <Globe className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Primeira Exportação para o Uruguai</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Primeira Exportação para o Uruguai</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -243,12 +208,7 @@ const Timeline = () => {
       title: '2008',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white mr-4">
-              <Zap className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Ampliação do Espaço Físico e Extrusora Francesa</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Ampliação do Espaço Físico e Extrusora Francesa</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -275,12 +235,7 @@ const Timeline = () => {
       title: '2009',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-pink-500 to-pink-600 text-white mr-4">
-              <Package className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Implementação da Linha de Enlatados</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Implementação da Linha de Enlatados</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -307,12 +262,7 @@ const Timeline = () => {
       title: '2012',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white mr-4">
-              <Factory className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Segunda Ampliação do Parque Fabril</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Segunda Ampliação do Parque Fabril</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -339,12 +289,7 @@ const Timeline = () => {
       title: '2015',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-violet-500 to-violet-600 text-white mr-4">
-              <Award className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">A Linha Priorità Super Premium é Criada e a Fábrica Passa pela Terceira Ampliação</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">A Linha Priorità Super Premium é Criada e a Fábrica Passa pela Terceira Ampliação</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -371,12 +316,7 @@ const Timeline = () => {
       title: '2017',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 text-white mr-4">
-              <Package className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Implementação da Linha de Sachês e Nova Ampliação</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Implementação da Linha de Sachês e Nova Ampliação</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -403,12 +343,7 @@ const Timeline = () => {
       title: '2018',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-white mr-4">
-              <Zap className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Quarta Ampliação do Parque Fabril</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Quarta Ampliação do Parque Fabril</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
@@ -435,12 +370,7 @@ const Timeline = () => {
       title: '2022',
       content: (
         <div>
-          <div className="flex items-center mb-4">
-            <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white mr-4">
-              <Factory className="h-6 w-6" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Quinta Ampliação do Parque Fabril</h3>
-          </div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Quinta Ampliação do Parque Fabril</h3>
           <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
               <div className="bg-white/90 rounded-full p-3">
