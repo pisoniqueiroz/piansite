@@ -83,6 +83,358 @@ const Timeline = () => {
       )
     },
     {
+      title: '1995',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-purple-500 to-purple-600 text-white mr-4">
+              <Truck className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Primeiro Caminhão Baú</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/d3QRxkL6/1.png"
+              alt="Primeiro caminhão baú da PIAN"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/d3QRxkL6/1.png", "Primeiro caminhão baú da PIAN")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 1995, a Pian Alimentos adquiriu seu primeiro caminhão baú, utilizado para distribuir as rações que eram produzidas no Paraná. Na imagem, em frente ao caminhão, está Paulo Pian.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '1998',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500 to-orange-600 text-white mr-4">
+              <Award className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Início das Vendas da Marca Mikdog</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/4NdbvcCN/2.png"
+              alt="Início da marca Mikdog"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/4NdbvcCN/2.png", "Início da marca Mikdog")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            O ano de 1998 marcou o início das vendas da marca Mikdog, a primeira marca própria da Pian Alimentos.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2000',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white mr-4">
+              <Factory className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">A Fábrica da PIAN é Construída em Paraí-RS</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/j5LkkFmC/Design-sem-nome-29.png"
+              alt="Construção da fábrica PIAN"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/j5LkkFmC/Design-sem-nome-29.png", "Construção da fábrica PIAN")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Ao longo do tempo, fomos adquirindo uma base sólida de conhecimento e, percebendo o potencial de expansão do mercado, entendemos que era hora de dar um novo passo. Foi então que, em 2000, iniciamos nossas atividades no ramo industrial construindo nossa fábrica na cidade de Paraí-RS, onde produzimos a primeira linha de alimentos secos com maquinário totalmente nacional. No mesmo ano de criação da fábrica, são lançadas ainda as linhas Mikdog e Mikcat.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2006',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-yellow-500 to-yellow-600 text-white mr-4">
+              <Sparkles className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Primeira Ampliação do Parque Fabril e Início da Produção de Nuggets</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/HnMvT7pg/Design-sem-nome-30.png"
+              alt="Primeira ampliação e produção de nuggets"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/HnMvT7pg/Design-sem-nome-30.png", "Primeira ampliação e produção de nuggets")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 2006, com a demanda pelos produtos em crescimento, fizemos a primeira expansão do parque fabril, com a implantação de uma tecnologia trazida da França, para a produção de nuggets e de uma segunda linha de alimentos.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2007',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-indigo-500 to-indigo-600 text-white mr-4">
+              <Globe className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Primeira Exportação para o Uruguai</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/1tMPQ23S/2007-Primeira-Exportacao-para-o-Uruguai.jpg"
+              alt="Primeira exportação para o Uruguai"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/1tMPQ23S/2007-Primeira-Exportacao-para-o-Uruguai.jpg", "Primeira exportação para o Uruguai")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 2007, a Pian Alimentos realizou sua primeira exportação, marcando presença no mercado internacional ao enviar produtos para o Uruguai.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2008',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-teal-500 to-teal-600 text-white mr-4">
+              <Zap className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Ampliação do Espaço Físico e Extrusora Francesa</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/dQnjTBxx/5.png"
+              alt="Ampliação e extrusora francesa"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/dQnjTBxx/5.png", "Ampliação e extrusora francesa")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 2008, houve uma nova ampliação do espaço físico da fábrica e uma extrusora francesa começou a funcionar, aumentando grandemente a capacidade de produção da Pian Alimentos.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2009',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-pink-500 to-pink-600 text-white mr-4">
+              <Package className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Implementação da Linha de Enlatados</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/vZxrkdHJ/6.png"
+              alt="Linha de enlatados"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Linha de enlatados")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            A partir de 2009, passamos a desenvolver uma linha de enlatados.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2012',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-600 text-white mr-4">
+              <Factory className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Segunda Ampliação do Parque Fabril</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/vZxrkdHJ/6.png"
+              alt="Segunda ampliação do parque fabril"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Segunda ampliação do parque fabril")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 2012, implementamos a terceira linha de produção de alimentos secos, havendo, ainda neste ano, a segunda ampliação do parque fabril.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2015',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-violet-500 to-violet-600 text-white mr-4">
+              <Award className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">A Linha Priorità Super Premium é Criada e a Fábrica Passa pela Terceira Ampliação</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/Ss3t0Gbd/Design-sem-nome-31.png"
+              alt="Linha Priorità Super Premium"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/Ss3t0Gbd/Design-sem-nome-31.png", "Linha Priorità Super Premium")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            O ano de 2015 ficou marcado pela criação da linha Priorità Super Premium e pela chegada da primeira máquina de automatização do empacotamento e peletização na fábrica, que passou pela terceira ampliação.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2017',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-rose-500 to-rose-600 text-white mr-4">
+              <Package className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Implementação da Linha de Sachês e Nova Ampliação</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/vZxrkdHJ/6.png"
+              alt="Linha de sachês"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Linha de sachês")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 2017 criamos nossa linha de sachês, com tecnologia espanhola e holandesa. Neste mesmo ano, ocorreu uma nova ampliação do espaço físico para aperfeiçoamento da produção da linha de alimentos úmidos.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2018',
+      content: (
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="p-3 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 text-white mr-4">
+              <Zap className="h-6 w-6" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed">Quarta Ampliação do Parque Fabril</h3>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/jdF6MjK6/4.png"
+              alt="Quarta ampliação do parque fabril"
+              className="w-full h-48 md:h-64 object-cover mb-6"
+              onClick={() => openImageModal("https://i.postimg.cc/jdF6MjK6/4.png", "Quarta ampliação do parque fabril")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Já em 2018, adquirimos a segunda máquina de empacotamento e peletização automatizada, havendo neste ano a quarta ampliação do parque fabril.
+          </p>
+        </div>
+      )
+    },
+    {
       title: '2022',
       content: (
         <div>
