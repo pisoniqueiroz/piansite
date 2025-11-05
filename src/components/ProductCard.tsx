@@ -8,6 +8,7 @@ interface ProductCardProps {
   description: string;
   category: string;
   type?: string;
+  classification?: string;
   onViewDetails: () => void;
 }
 
@@ -17,16 +18,19 @@ const ProductCard: React.FC<ProductCardProps> = ({
   description,
   category,
   type,
+  classification,
   onViewDetails
 }) => {
-  const getTypeColor = (productType: string) => {
-    switch (productType) {
-      case 'Rações Secas':
-        return 'bg-blue-600';
-      case 'Alimentos Úmidos':
+  const getClassificationColor = (classif: string) => {
+    switch (classif) {
+      case 'Super Premium':
+        return 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-orange-500';
+      case 'Premium Especial':
         return 'bg-orange-600';
-      case 'Snack':
-        return 'bg-green-600';
+      case 'Premium':
+        return 'bg-blue-600';
+      case 'Standard':
+        return 'bg-gray-600';
       default:
         return 'bg-gray-600';
     }
@@ -91,15 +95,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </h3>
         
         {/* Badges */}
-        <div className="flex flex-wrap items-center gap-2 mt-3">
-          {type && (
-            <div className={`${getTypeColor(type)} text-white px-3 py-1.5 text-xs font-semibold rounded-md`}>
-              <span className="font-bold font-barlow-condensed">{type}</span>
+        <div className="flex flex-col gap-2 mt-3">
+          {classification && (
+            <div className="flex items-center gap-2">
+              <div className={`${getClassificationColor(classification)} text-white px-3 py-1.5 text-xs font-semibold rounded-md`}>
+                <span className="font-bold font-barlow-condensed">Linha {classification}</span>
+              </div>
+              <div className="bg-white border-2 border-pian-red text-pian-red p-1.5 rounded-md flex items-center justify-center">
+                {getAnimalIcon(category)}
+              </div>
             </div>
           )}
-          <div className="bg-gray-800 text-white p-1.5 rounded-md flex items-center justify-center">
-            {getAnimalIcon(category)}
-          </div>
         </div>
       </div>
       
