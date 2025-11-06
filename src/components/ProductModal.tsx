@@ -9,7 +9,7 @@ interface ProductModalProps {
     description: string;
     category: string;
     type?: string;
-    line?: string;
+    classification?: string;
   };
   isOpen: boolean;
   onClose: () => void;
@@ -19,6 +19,16 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
   if (!isOpen) return null;
 
   const parseDescription = (description: string) => {
+    if (!description) {
+      return {
+        descricao: '',
+        composicao: '',
+        enriquecimento: '',
+        niveis: '',
+        diferenciais: ''
+      };
+    }
+
     const sections = {
       descricao: '',
       composicao: '',
@@ -106,7 +116,8 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
     });
   };
 
-  const sections = parseDescription(product.description);
+  const sections = parseDescription(product.description || '');
+  const hasAnyContent = sections.descricao || sections.composicao || sections.enriquecimento || sections.niveis || sections.diferenciais;
 
   return (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -172,6 +183,14 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
             {/* Information Sections */}
             <div className="max-w-4xl mx-auto space-y-6">
+              {!hasAnyContent && (
+                <div className="text-center py-12">
+                  <p className="text-gray-600 text-lg font-barlow-condensed">
+                    Informações detalhadas em breve.
+                  </p>
+                </div>
+              )}
+
               {/* Diferenciais */}
               {sections.diferenciais && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
