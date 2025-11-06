@@ -127,21 +127,15 @@ const GradientMenu: React.FC = () => {
       >
         {/* Background gradient */}
         <motion.div
-          className={cn(
-            "absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300",
-            `bg-gradient-to-r ${gradientClass}`
-          )}
+          className="absolute inset-0 rounded-xl bg-yellow-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           initial={{ opacity: 0 }}
-          animate={{ opacity: isHovered ? 0.1 : 0 }}
+          animate={{ opacity: isHovered ? 1 : 0 }}
         />
         
         {/* Active state background */}
         {isActive && (
           <motion.div
-            className={cn(
-              "absolute inset-0 rounded-xl opacity-20",
-              `bg-gradient-to-r ${gradientClass}`
-            )}
+            className="absolute inset-0 rounded-xl bg-gray-100"
             layoutId="activeBackground"
           />
         )}
@@ -154,7 +148,7 @@ const GradientMenu: React.FC = () => {
               className={cn(
                 "p-2 rounded-lg transition-all duration-300",
                 isHovered || isActive
-                  ? `bg-gradient-to-r ${gradientClass} text-white shadow-lg`
+                  ? "bg-black text-white shadow-lg"
                   : "bg-gray-100 text-gray-600"
               )}
               animate={{
@@ -168,10 +162,9 @@ const GradientMenu: React.FC = () => {
             {/* Label */}
             <motion.span
               className={cn(
-                "font-bold transition-colors duration-300 font-montserrat",
                 "font-bold transition-colors duration-300 font-barlow-condensed",
                 isSubmenu ? "text-sm" : "text-base",
-                isHovered || isActive ? "text-gray-900" : "text-gray-700"
+                isHovered || isActive ? "text-black" : "text-gray-700"
               )}
               animate={{
                 x: isHovered ? 2 : 0
@@ -194,10 +187,7 @@ const GradientMenu: React.FC = () => {
 
         {/* Hover effect line */}
         <motion.div
-          className={cn(
-            "absolute bottom-0 left-0 h-0.5 rounded-full",
-            `bg-gradient-to-r ${gradientClass}`
-          )}
+          className="absolute bottom-0 left-0 h-0.5 rounded-full bg-yellow-500"
           initial={{ width: 0 }}
           animate={{ width: isHovered ? "100%" : 0 }}
           transition={{ duration: 0.3 }}
@@ -227,9 +217,7 @@ const GradientMenu: React.FC = () => {
               <Heart className="w-5 h-5 text-white" />
             </div>
             <div>
-              <h3 className="font-bold text-gray-900 font-montserrat">PIAN ALIMENTOS</h3>
               <h3 className="font-bold text-gray-900 font-barlow-condensed">PIAN ALIMENTOS</h3>
-              <p className="text-xs text-gray-500 font-montserrat">A gente entende esse amor</p>
               <p className="text-xs text-gray-500 font-barlow-condensed">A gente entende esse amor</p>
             </div>
           </div>

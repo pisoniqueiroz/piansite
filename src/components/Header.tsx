@@ -50,19 +50,9 @@ const Header = () => {
               <Link
                 key={item.path}
                 to={item.path}
-                className={`relative font-bold transition-all duration-200 font-barlow-condensed hover:text-yellow-500 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-yellow-400 after:transition-all after:duration-200 px-3 py-2 rounded-lg text-xl ${
-                  isActive(item.path) ? 'after:w-full bg-yellow-600 text-black' : 'text-gray-700'
+                className={`relative font-bold transition-all duration-200 font-barlow-condensed after:absolute after:bottom-0 after:left-0 after:h-0.5 after:bg-yellow-500 after:transition-all after:duration-200 px-3 py-2 rounded-lg text-xl ${
+                  isActive(item.path) ? 'after:w-full bg-black text-white' : 'text-gray-700 hover:text-gray-900 hover:bg-yellow-50'
                 }`}
-                onMouseEnter={(e) => {
-                  if (!isActive(item.path)) {
-                    e.currentTarget.style.color = '#FDD528';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive(item.path)) {
-                    e.currentTarget.style.color = '';
-                  }
-                }}
               >
                 {item.label}
               </Link>
@@ -153,15 +143,7 @@ const Header = () => {
           <div className="lg:hidden">
             <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-gray-700 transition-colors p-2 rounded-lg"
-            onMouseEnter={(e) => {
-              e.currentTarget.style.color = '#FDD528';
-              e.currentTarget.style.backgroundColor = '#fffef0';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.color = '';
-              e.currentTarget.style.backgroundColor = '';
-            }}
+            className="lg:hidden text-gray-700 hover:text-gray-900 hover:bg-yellow-50 transition-colors p-2 rounded-lg"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -192,20 +174,8 @@ const Header = () => {
                 to={item.path}
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-3 py-3 rounded-lg font-bold transition-all duration-200 font-barlow-condensed text-xl ${
-                  isActive(item.path) ? 'bg-yellow-600 text-white' : 'text-gray-700'
+                  isActive(item.path) ? 'bg-black text-white' : 'text-gray-700 hover:bg-yellow-50 hover:text-gray-900'
                 }`}
-                onMouseEnter={(e) => {
-                  if (!isActive(item.path)) {
-                    e.currentTarget.style.color = '#FDD528';
-                    e.currentTarget.style.backgroundColor = '#fffef0';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!isActive(item.path)) {
-                    e.currentTarget.style.color = '';
-                    e.currentTarget.style.backgroundColor = '';
-                  }
-                }}
               >
                 {item.label}
               </Link>
@@ -216,14 +186,14 @@ const Header = () => {
                 <Link
                   to="/admin"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center gap-2 px-3 py-3 rounded-lg bg-pian-red text-white font-bold transition-all duration-200 font-barlow-condensed text-xl"
+                  className="flex items-center gap-2 px-3 py-3 rounded-lg bg-pian-red text-white font-bold transition-all duration-200 font-barlow-condensed text-xl hover:bg-red-700"
                 >
                   <Shield className="h-5 w-5" />
                   Admin
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="w-full flex items-center gap-2 px-3 py-3 rounded-lg bg-gray-800 text-white font-bold transition-all duration-200 font-barlow-condensed text-xl text-left"
+                  className="w-full flex items-center gap-2 px-3 py-3 rounded-lg bg-gray-800 text-white font-bold transition-all duration-200 font-barlow-condensed text-xl text-left hover:bg-gray-700"
                 >
                   <LogOut className="h-5 w-5" />
                   Sair
