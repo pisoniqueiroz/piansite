@@ -119,7 +119,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
           <li
             key={index}
             className={`leading-relaxed ${isDiferenciais ? 'text-gray-900 text-base uppercase list-none' : 'ml-4 text-gray-800 text-sm'}`}
-            style={isDiferenciais ? { fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: 'bold' } : undefined}
+            style={isDiferenciais ? { fontFamily: 'Helvetica, Arial, sans-serif', fontWeight: '700' } : undefined}
           >
             {line.replace(/^- |^✓ |^• /, '')}
           </li>
