@@ -83,7 +83,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
     return sections;
   };
 
-  const formatText = (text: string) => {
+  const formatText = (text: string, isDiferenciais: boolean = false) => {
     return text.split('\n').map((line, index) => {
       line = line.trim();
       if (!line) return null;
@@ -98,7 +98,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
       if (line.startsWith('- ') || line.startsWith('✓ ')) {
         return (
-          <li key={index} className="ml-4 text-gray-800 text-sm leading-relaxed">
+          <li key={index} className={`ml-4 leading-relaxed ${isDiferenciais ? 'text-gray-900 text-base font-medium' : 'text-gray-800 text-sm'}`}>
             {line.replace(/^- |^✓ /, '')}
           </li>
         );
@@ -127,7 +127,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
       }
 
       return (
-        <p key={index} className="text-gray-800 text-sm leading-relaxed mb-2">
+        <p key={index} className={`leading-relaxed mb-2 ${isDiferenciais ? 'text-gray-900 text-base font-medium' : 'text-gray-800 text-sm'}`}>
           {line}
         </p>
       );
@@ -202,12 +202,33 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
             </div>
 
             {/* Information Sections */}
-            <div className="max-w-4xl mx-auto space-y-6">
+            <div className="max-w-5xl mx-auto space-y-6">
               {!hasAnyContent && (
                 <div className="text-center py-12">
                   <p className="text-gray-600 text-lg font-barlow-condensed">
                     Informações detalhadas em breve.
                   </p>
+                </div>
+              )}
+
+              {/* Diferenciais - FIRST SECTION */}
+              {sections.isStructured && sections.diferenciais && (
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-6 py-5 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Award className="h-7 w-7 text-white mr-3" />
+                      <h2 className="text-2xl font-bold text-white font-barlow-condensed uppercase tracking-wide">
+                        Diferenciais
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-10 py-8 bg-white">
+                    <ul className="space-y-3 text-gray-900" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+                      {formatText(sections.diferenciais, true)}
+                    </ul>
+                  </div>
                 </div>
               )}
 
@@ -228,27 +249,6 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                     <div className="text-gray-800 leading-relaxed">
                       {formatText(sections.simpleDescription)}
                     </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Diferenciais */}
-              {sections.isStructured && sections.diferenciais && (
-                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
-                  <div className="bg-gradient-to-r from-pian-red to-red-700 px-6 py-4 relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
-                    <div className="flex items-center justify-center">
-                      <Award className="h-6 w-6 text-white mr-3" />
-                      <h2 className="text-xl font-bold text-white font-barlow-condensed uppercase">
-                        Diferenciais
-                      </h2>
-                    </div>
-                  </div>
-
-                  <div className="px-8 py-6 bg-white">
-                    <ul className="space-y-2 text-gray-800 font-sans">
-                      {formatText(sections.diferenciais)}
-                    </ul>
                   </div>
                 </div>
               )}
