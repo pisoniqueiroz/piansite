@@ -359,75 +359,79 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 </div>
               )}
 
-              {/* Guia Alimentar Section */}
-              <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 mt-8">
-                <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-5 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
-                  <div className="flex items-center justify-center">
-                    <Package className="h-7 w-7 text-pian-black mr-3" />
-                    <h2 className="text-2xl font-bold text-pian-black font-barlow-condensed uppercase tracking-wide">
-                      Guia Alimentar
-                    </h2>
+              {/* Guia Alimentar Section - Only for relevant products */}
+              {product.classification !== 'Linha Peixes' &&
+               product.classification !== 'Linha Snacks' &&
+               product.classification !== 'Alimentos Úmidos' && (
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 mt-8">
+                  <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-5 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Package className="h-7 w-7 text-pian-black mr-3" />
+                      <h2 className="text-2xl font-bold text-pian-black font-barlow-condensed uppercase tracking-wide">
+                        Guia Alimentar
+                      </h2>
+                    </div>
                   </div>
-                </div>
 
-                <div className="px-8 py-8 bg-white">
-                  <p className="text-justify text-gray-800 text-base leading-relaxed mb-6 font-semibold">
-                    Toda introdução de um novo alimento deve ser gradual e crescente. Para uma perfeita adaptação do sistema digestório sugerimos o seguinte programa:
-                  </p>
+                  <div className="px-8 py-8 bg-white">
+                    <p className="text-justify text-gray-800 text-base leading-relaxed mb-6 font-semibold">
+                      Toda introdução de um novo alimento deve ser gradual e crescente. Para uma perfeita adaptação do sistema digestório sugerimos o seguinte programa:
+                    </p>
 
-                  {/* Carousel */}
-                  <div className="relative">
-                    <div className="overflow-hidden rounded-2xl shadow-lg">
-                      <div className="relative aspect-[16/9] bg-white">
-                        <img
-                          src={guiaAlimentarImages[currentSlide]}
-                          alt={`Guia Alimentar - Etapa ${currentSlide + 1}`}
-                          className="w-full h-full object-contain"
-                        />
+                    {/* Carousel */}
+                    <div className="relative">
+                      <div className="overflow-hidden rounded-2xl shadow-lg">
+                        <div className="relative aspect-[16/9] bg-white">
+                          <img
+                            src={guiaAlimentarImages[currentSlide]}
+                            alt={`Guia Alimentar - Etapa ${currentSlide + 1}`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      </div>
+
+                      {/* Navigation Buttons */}
+                      <button
+                        onClick={prevSlide}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-pian-black/80 hover:bg-pian-red text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+                        aria-label="Anterior"
+                      >
+                        <ChevronLeft className="h-6 w-6" />
+                      </button>
+
+                      <button
+                        onClick={nextSlide}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-pian-black/80 hover:bg-pian-red text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+                        aria-label="Próximo"
+                      >
+                        <ChevronRight className="h-6 w-6" />
+                      </button>
+
+                      {/* Dots Indicator */}
+                      <div className="flex justify-center gap-2 mt-6">
+                        {guiaAlimentarImages.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`h-3 w-3 rounded-full transition-all duration-300 ${
+                              index === currentSlide
+                                ? 'bg-pian-red w-8'
+                                : 'bg-gray-300 hover:bg-gray-400'
+                            }`}
+                            aria-label={`Ir para slide ${index + 1}`}
+                          />
+                        ))}
+                      </div>
+
+                      {/* Counter */}
+                      <div className="text-center mt-4 text-sm text-gray-600 font-barlow-condensed">
+                        Etapa {currentSlide + 1} de {guiaAlimentarImages.length}
                       </div>
                     </div>
-
-                    {/* Navigation Buttons */}
-                    <button
-                      onClick={prevSlide}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 bg-pian-black/80 hover:bg-pian-red text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
-                      aria-label="Anterior"
-                    >
-                      <ChevronLeft className="h-6 w-6" />
-                    </button>
-
-                    <button
-                      onClick={nextSlide}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 bg-pian-black/80 hover:bg-pian-red text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
-                      aria-label="Próximo"
-                    >
-                      <ChevronRight className="h-6 w-6" />
-                    </button>
-
-                    {/* Dots Indicator */}
-                    <div className="flex justify-center gap-2 mt-6">
-                      {guiaAlimentarImages.map((_, index) => (
-                        <button
-                          key={index}
-                          onClick={() => setCurrentSlide(index)}
-                          className={`h-3 w-3 rounded-full transition-all duration-300 ${
-                            index === currentSlide
-                              ? 'bg-pian-red w-8'
-                              : 'bg-gray-300 hover:bg-gray-400'
-                          }`}
-                          aria-label={`Ir para slide ${index + 1}`}
-                        />
-                      ))}
-                    </div>
-
-                    {/* Counter */}
-                    <div className="text-center mt-4 text-sm text-gray-600 font-barlow-condensed">
-                      Etapa {currentSlide + 1} de {guiaAlimentarImages.length}
-                    </div>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
