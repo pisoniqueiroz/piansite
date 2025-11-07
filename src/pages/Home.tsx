@@ -11,9 +11,9 @@ const Home = () => {
       <HeroBanner />
 
       {/* Da Nossa Família Para a Sua */}
-      <section className="py-32 bg-white section-divider">
+      <section className="py-20 bg-white section-divider">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Texto */}
             <div className="space-y-6 order-2 lg:order-1">
               <h2 className="text-[75px] font-black text-gray-900 mb-6 font-barlow-condensed leading-tight uppercase tracking-wider">
@@ -57,6 +57,19 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Decorative Divider */}
+      <div className="flex items-center justify-center py-8 bg-white">
+        <div className="flex items-center gap-4 max-w-md">
+          <div className="h-px flex-1 bg-gradient-to-r from-transparent via-pian-red to-pian-red"></div>
+          <div className="flex gap-2">
+            <div className="w-2 h-2 rounded-full bg-pian-red animate-pulse"></div>
+            <div className="w-2 h-2 rounded-full bg-pian-yellow animate-pulse delay-100"></div>
+            <div className="w-2 h-2 rounded-full bg-pian-red animate-pulse delay-200"></div>
+          </div>
+          <div className="h-px flex-1 bg-gradient-to-l from-transparent via-pian-red to-pian-red"></div>
+        </div>
+      </div>
 
       {/* Typewriter Text Section */}
       <section className="py-12 bg-white">
