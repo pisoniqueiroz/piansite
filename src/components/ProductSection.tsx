@@ -25,17 +25,7 @@ const ProductSection = () => {
         { name: 'Standard', color: 'bg-gray-600 text-white' },
       ];
     }
-    if (category === 'Alimentos Úmidos' || category === 'Snacks') {
-      return [
-        { name: 'Premium', color: 'bg-gradient-to-r from-red-600 to-red-700 text-white' },
-        { name: 'Standard', color: 'bg-gray-600 text-white' },
-      ];
-    }
-    if (category === 'Peixes') {
-      return [
-        { name: 'Premium', color: 'bg-gradient-to-r from-red-600 to-red-700 text-white' },
-      ];
-    }
+    // Peixes, Alimentos Úmidos e Snacks não têm filtros de linha
     return [];
   };
 
