@@ -75,7 +75,7 @@ const Distributors = () => {
                 </a>
 
                 <p className="text-gray-400 text-sm mt-4 animate-fade-in-delay-2 font-bold font-barlow-condensed">
-                  Acesso ao Google Drive com materiais para distribuidores
+                  Acesso restrito mediante senha fornecida pela equipe comercial
                 </p>
               </div>
             </div>
