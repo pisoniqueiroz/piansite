@@ -96,14 +96,14 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
         );
       }
 
-      if (line.startsWith('- ') || line.startsWith('✓ ')) {
+      if (line.startsWith('- ') || line.startsWith('✓ ') || line.startsWith('•')) {
         return (
           <li
             key={index}
-            className={`ml-4 leading-relaxed ${isDiferenciais ? 'text-gray-900 text-base font-bold uppercase' : 'text-gray-800 text-sm'}`}
+            className={`leading-relaxed ${isDiferenciais ? 'text-gray-900 text-base font-bold uppercase list-none' : 'ml-4 text-gray-800 text-sm'}`}
             style={isDiferenciais ? { fontFamily: 'Helvetica, Arial, sans-serif' } : undefined}
           >
-            {line.replace(/^- |^✓ /, '')}
+            {line.replace(/^- |^✓ |^• /, '')}
           </li>
         );
       }
@@ -229,7 +229,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                   </div>
 
                   <div className="px-10 py-8 bg-white">
-                    <ul className="space-y-3">
+                    <ul className="space-y-3 text-center">
                       {formatText(sections.diferenciais, true)}
                     </ul>
                   </div>
