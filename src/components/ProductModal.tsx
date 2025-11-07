@@ -25,7 +25,23 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
         composicao: '',
         enriquecimento: '',
         niveis: '',
-        diferenciais: ''
+        diferenciais: '',
+        isStructured: false,
+        simpleDescription: ''
+      };
+    }
+
+    const hasStructuredSections = /##\s*(DESCRIÇÃO|COMPOSIÇÃO|ENRIQUECIMENTO|NÍVEIS|DIFERENCIAIS)/i.test(description);
+
+    if (!hasStructuredSections) {
+      return {
+        descricao: '',
+        composicao: '',
+        enriquecimento: '',
+        niveis: '',
+        diferenciais: '',
+        isStructured: false,
+        simpleDescription: description.trim()
       };
     }
 
@@ -34,7 +50,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
       composicao: '',
       enriquecimento: '',
       niveis: '',
-      diferenciais: ''
+      diferenciais: '',
+      isStructured: true,
+      simpleDescription: ''
     };
 
     const descMatch = description.match(/##\s*DESCRIÇÃO\s*([\s\S]*?)(?=##|$)/i);
@@ -117,7 +135,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
   };
 
   const sections = parseDescription(product.description || '');
-  const hasAnyContent = sections.descricao || sections.composicao || sections.enriquecimento || sections.niveis || sections.diferenciais;
+  const hasAnyContent = sections.isStructured
+    ? (sections.descricao || sections.composicao || sections.enriquecimento || sections.niveis || sections.diferenciais)
+    : sections.simpleDescription;
 
   return (
     <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
@@ -191,8 +211,29 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 </div>
               )}
 
+              {/* Simple Description Display (for products without structured format) */}
+              {!sections.isStructured && sections.simpleDescription && (
+                <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
+                  <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
+                    <div className="flex items-center justify-center">
+                      <Package className="h-6 w-6 text-pian-black mr-3" />
+                      <h2 className="text-xl font-bold text-pian-black font-barlow-condensed uppercase">
+                        Sobre o Produto
+                      </h2>
+                    </div>
+                  </div>
+
+                  <div className="px-8 py-6 bg-white">
+                    <div className="text-gray-800 leading-relaxed">
+                      {formatText(sections.simpleDescription)}
+                    </div>
+                  </div>
+                </div>
+              )}
+
               {/* Diferenciais */}
-              {sections.diferenciais && (
+              {sections.isStructured && sections.diferenciais && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-pian-red to-red-700 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
@@ -213,7 +254,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               )}
 
               {/* Descrição */}
-              {sections.descricao && (
+              {sections.isStructured && sections.descricao && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
@@ -234,7 +275,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               )}
 
               {/* Composição */}
-              {sections.composicao && (
+              {sections.isStructured && sections.composicao && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
@@ -255,7 +296,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               )}
 
               {/* Enriquecimento */}
-              {sections.enriquecimento && (
+              {sections.isStructured && sections.enriquecimento && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
@@ -276,7 +317,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               )}
 
               {/* Níveis de Garantia */}
-              {sections.niveis && (
+              {sections.isStructured && sections.niveis && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500">
                   <div className="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
