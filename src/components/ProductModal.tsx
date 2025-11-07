@@ -372,7 +372,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                 </div>
 
                 <div className="px-8 py-8 bg-white">
-                  <p className="text-center text-gray-800 text-base leading-relaxed mb-6 font-semibold">
+                  <p className="text-justify text-gray-800 text-base leading-relaxed mb-6 font-semibold">
                     Toda introdução de um novo alimento deve ser gradual e crescente. Para uma perfeita adaptação do sistema digestório sugerimos o seguinte programa:
                   </p>
 
