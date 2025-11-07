@@ -61,8 +61,10 @@ const Distributors = () => {
               {/* Conteúdo do card */}
               <div className="px-8 py-12 text-center animate-fade-in-delay">
                 {/* Botão principal */}
-                <button
-                  onClick={() => setShowPasswordModal(true)}
+                <a
+                  href="https://drive.google.com/drive/folders/1zyncMGhLEvO1nc2Z7_VakWunZwy2wTD-?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group inline-flex items-center px-10 py-4 bg-pian-yellow text-pian-black rounded-2xl hover:bg-pian-yellow-dark transition-all duration-300 transform hover:scale-110 shadow-xl hover:shadow-2xl font-bold text-lg animate-bounce-subtle relative overflow-hidden font-bold font-barlow-condensed"
                 >
                   {/* Efeito de brilho no botão */}
@@ -70,10 +72,10 @@ const Distributors = () => {
                   <Lock className="mr-3 h-6 w-6 group-hover:animate-pulse" />
                   <span className="relative z-10">CLIQUE E ACESSE</span>
                   <ExternalLink className="ml-3 h-6 w-6 group-hover:translate-x-1 transition-transform duration-300" />
-                </button>
-                
+                </a>
+
                 <p className="text-gray-400 text-sm mt-4 animate-fade-in-delay-2 font-bold font-barlow-condensed">
-                  Acesso restrito mediante senha fornecida pela equipe comercial
+                  Acesso ao Google Drive com materiais para distribuidores
                 </p>
               </div>
             </div>
