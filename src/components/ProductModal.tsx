@@ -379,7 +379,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                   {/* Carousel */}
                   <div className="relative">
                     <div className="overflow-hidden rounded-2xl shadow-lg">
-                      <div className="relative aspect-[16/9] bg-gray-100">
+                      <div className="relative aspect-[16/9] bg-white">
                         <img
                           src={guiaAlimentarImages[currentSlide]}
                           alt={`Guia Alimentar - Etapa ${currentSlide + 1}`}
