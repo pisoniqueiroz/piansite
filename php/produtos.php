@@ -288,7 +288,7 @@ function gerarConteudoModal(produto) {
                         <div class="bg-gradient-to-r from-red-600 to-red-700 px-6 py-4 text-center">
                             <h2 class="text-xl font-bold text-white uppercase">Diferenciais</h2>
                         </div>
-                        <div class="px-8 py-6 font-sans">${formatText(sections.diferenciais)}</div>
+                        <div class="px-8 py-6">${formatText(sections.diferenciais, true)}</div>
                     </div>
                 ` : ''}
 
@@ -342,7 +342,7 @@ function parseDescription(description) {
     };
 }
 
-function formatText(text) {
+function formatText(text, isDiferenciais = false) {
     return text.split('\n').map(line => {
         line = line.trim();
         if (!line) return '';
@@ -358,7 +358,11 @@ function formatText(text) {
         }
 
         if (line.startsWith('- ') || line.startsWith('✓ ')) {
-            return `<li class="ml-4 text-gray-800 text-sm mb-2">${line.replace(/^- |^✓ /, '')}</li>`;
+            const content = line.replace(/^- |^✓ /, '');
+            if (isDiferenciais) {
+                return `<li class="ml-4 text-gray-900 text-base font-bold uppercase mb-2" style="font-family: Helvetica, Arial, sans-serif;">${content}</li>`;
+            }
+            return `<li class="ml-4 text-gray-800 text-sm mb-2">${content}</li>`;
         }
 
         return `<p class="text-gray-800 text-sm mb-2">${line}</p>`;

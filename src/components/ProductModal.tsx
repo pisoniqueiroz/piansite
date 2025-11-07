@@ -98,7 +98,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
       if (line.startsWith('- ') || line.startsWith('✓ ')) {
         return (
-          <li key={index} className={`ml-4 leading-relaxed ${isDiferenciais ? 'text-gray-900 text-base font-medium' : 'text-gray-800 text-sm'}`}>
+          <li
+            key={index}
+            className={`ml-4 leading-relaxed ${isDiferenciais ? 'text-gray-900 text-base font-bold uppercase' : 'text-gray-800 text-sm'}`}
+            style={isDiferenciais ? { fontFamily: 'Helvetica, Arial, sans-serif' } : undefined}
+          >
             {line.replace(/^- |^✓ /, '')}
           </li>
         );
@@ -127,7 +131,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
       }
 
       return (
-        <p key={index} className={`leading-relaxed mb-2 ${isDiferenciais ? 'text-gray-900 text-base font-medium' : 'text-gray-800 text-sm'}`}>
+        <p key={index} className={`leading-relaxed mb-2 ${isDiferenciais ? 'text-gray-900 text-base' : 'text-gray-800 text-sm'}`}>
           {line}
         </p>
       );
@@ -225,7 +229,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
                   </div>
 
                   <div className="px-10 py-8 bg-white">
-                    <ul className="space-y-3 text-gray-900" style={{ fontFamily: 'Helvetica, Arial, sans-serif' }}>
+                    <ul className="space-y-3">
                       {formatText(sections.diferenciais, true)}
                     </ul>
                   </div>
