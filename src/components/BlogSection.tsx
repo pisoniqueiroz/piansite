@@ -234,7 +234,7 @@ const BlogSection = () => {
       id: 3,
       title: 'Cuidados especiais com cães idosos',
       excerpt: 'Aprenda como adaptar a alimentação e cuidados para garantir qualidade de vida na terceira idade.',
-      image: 'https://images.pexels.com/photos/3785428/pexels-photo-3785428.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.pexels.com/photos/3628100/pexels-photo-3628100.jpeg?auto=compress&cs=tinysrgb&w=800',
       date: '12 de Novembro, 2025',
       readTime: '9 min',
       category: 'Saúde',
