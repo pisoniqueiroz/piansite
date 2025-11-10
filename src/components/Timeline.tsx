@@ -451,10 +451,10 @@ const Timeline = () => {
             onClick={closeImageModal}
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
+              initial={{ scale: 0.85, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              exit={{ scale: 0.85, opacity: 0 }}
+              transition={{ type: "spring", damping: 20, stiffness: 200 }}
               className="relative max-w-6xl max-h-[90vh] w-full"
             >
               <button
@@ -465,9 +465,9 @@ const Timeline = () => {
               </button>
 
               <motion.img
-                initial={{ scale: 0.95 }}
-                animate={{ scale: 1 }}
-                transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                initial={{ scale: 0.7 }}
+                animate={{ scale: 1.05 }}
+                transition={{ type: "spring", damping: 15, stiffness: 200, delay: 0.1 }}
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 className="w-full h-full object-contain rounded-xl shadow-2xl"
