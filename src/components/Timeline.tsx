@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import { Timeline as TimelineUI } from './ui/timeline';
 import { X, ZoomIn } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Timeline = () => {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
@@ -29,13 +30,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/W1fXQnvy/1984.jpg"
               alt="Início da PIAN em 1984"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/W1fXQnvy/1984.jpg", "Início da PIAN em 1984")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Tudo começou com a nossa família em 1984, ano em que passamos a adquirir insumos para produzir alimentos para animais na cidade de Paraí, no Rio Grande do Sul. Inicialmente, os produtos eram comercializados apenas na localidade, mas logo, o negócio cresceu.
           </p>
@@ -56,13 +58,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/pd06CH0g/Design-sem-nome-28.png"
               alt="PIAN chega a Porto Alegre"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/pd06CH0g/Design-sem-nome-28.png", "PIAN chega a Porto Alegre")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             No ano de 1987, com uma visão empreendedora, chegamos na capital gaúcha, dando início a uma nova etapa para a Pian no mercado pet. Nos anos seguintes, desenvolvemos ainda mais nossa linha de nutrição animal, assim como a distribuição e comercialização de itens relacionados ao segmento.
           </p>
@@ -83,13 +86,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/d3QRxkL6/1.png"
               alt="Primeiro caminhão baú da PIAN"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/d3QRxkL6/1.png", "Primeiro caminhão baú da PIAN")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Em 1995, a Pian Alimentos adquiriu seu primeiro caminhão baú, utilizado para distribuir as rações que eram produzidas no Paraná. Na imagem, em frente ao caminhão, está Paulo Pian.
           </p>
@@ -110,13 +114,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/4NdbvcCN/2.png"
               alt="Início da marca Mikdog"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/4NdbvcCN/2.png", "Início da marca Mikdog")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             O ano de 1998 marcou o início das vendas da marca Mikdog, a primeira marca própria da Pian Alimentos.
           </p>
@@ -137,13 +142,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/j5LkkFmC/Design-sem-nome-29.png"
               alt="Construção da fábrica PIAN"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/j5LkkFmC/Design-sem-nome-29.png", "Construção da fábrica PIAN")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Ao longo do tempo, fomos adquirindo uma base sólida de conhecimento e, percebendo o potencial de expansão do mercado, entendemos que era hora de dar um novo passo. Foi então que, em 2000, iniciamos nossas atividades no ramo industrial construindo nossa fábrica na cidade de Paraí-RS, onde produzimos a primeira linha de alimentos secos com maquinário totalmente nacional. No mesmo ano de criação da fábrica, são lançadas ainda as linhas Mikdog e Mikcat.
           </p>
@@ -164,13 +170,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/HnMvT7pg/Design-sem-nome-30.png"
               alt="Primeira ampliação e produção de nuggets"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/HnMvT7pg/Design-sem-nome-30.png", "Primeira ampliação e produção de nuggets")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Em 2006, com a demanda pelos produtos em crescimento, fizemos a primeira expansão do parque fabril, com a implantação de uma tecnologia trazida da França, para a produção de nuggets e de uma segunda linha de alimentos.
           </p>
@@ -191,13 +198,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/1tMPQ23S/2007-Primeira-Exportacao-para-o-Uruguai.jpg"
               alt="Primeira exportação para o Uruguai"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/1tMPQ23S/2007-Primeira-Exportacao-para-o-Uruguai.jpg", "Primeira exportação para o Uruguai")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Em 2007, a Pian Alimentos realizou sua primeira exportação, marcando presença no mercado internacional ao enviar produtos para o Uruguai.
           </p>
@@ -218,13 +226,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/dQnjTBxx/5.png"
               alt="Ampliação e extrusora francesa"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/dQnjTBxx/5.png", "Ampliação e extrusora francesa")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Em 2008, houve uma nova ampliação do espaço físico da fábrica e uma extrusora francesa começou a funcionar, aumentando grandemente a capacidade de produção da Pian Alimentos.
           </p>
@@ -245,13 +254,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/vZxrkdHJ/6.png"
               alt="Linha de enlatados"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Linha de enlatados")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             A partir de 2009, passamos a desenvolver uma linha de enlatados.
           </p>
@@ -272,13 +282,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/vZxrkdHJ/6.png"
               alt="Segunda ampliação do parque fabril"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Segunda ampliação do parque fabril")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Em 2012, implementamos a terceira linha de produção de alimentos secos, havendo, ainda neste ano, a segunda ampliação do parque fabril.
           </p>
@@ -299,13 +310,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/Ss3t0Gbd/Design-sem-nome-31.png"
               alt="Linha Priorità Super Premium"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/Ss3t0Gbd/Design-sem-nome-31.png", "Linha Priorità Super Premium")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             O ano de 2015 ficou marcado pela criação da linha Priorità Super Premium e pela chegada da primeira máquina de automatização do empacotamento e peletização na fábrica, que passou pela terceira ampliação.
           </p>
@@ -326,13 +338,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/vZxrkdHJ/6.png"
               alt="Linha de sachês"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Linha de sachês")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Em 2017 criamos nossa linha de sachês, com tecnologia espanhola e holandesa. Neste mesmo ano, ocorreu uma nova ampliação do espaço físico para aperfeiçoamento da produção da linha de alimentos úmidos.
           </p>
@@ -353,13 +366,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/jdF6MjK6/4.png"
               alt="Quarta ampliação do parque fabril"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/jdF6MjK6/4.png", "Quarta ampliação do parque fabril")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             Já em 2018, adquirimos a segunda máquina de empacotamento e peletização automatizada, havendo neste ano a quarta ampliação do parque fabril.
           </p>
@@ -380,13 +394,14 @@ const Timeline = () => {
             <img
               src="https://i.postimg.cc/4yFc28C4/7.png"
               alt="Quinta ampliação do parque fabril"
-              className="w-full h-48 md:h-64 object-cover mb-6"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               onClick={() => openImageModal("https://i.postimg.cc/4yFc28C4/7.png", "Quinta ampliação do parque fabril")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
             />
           </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             O ano de 2022 marca a nossa mais recente ampliação do parque fabril, que passou por uma nova modernização.
           </p>
@@ -425,34 +440,52 @@ const Timeline = () => {
       </div>
 
       {/* Image Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
-          onClick={closeImageModal}
-        >
-          <div className="relative max-w-6xl max-h-[90vh] w-full">
-            <button
-              onClick={closeImageModal}
-              className="absolute -top-12 right-0 p-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-colors duration-200 z-10"
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={closeImageModal}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="relative max-w-6xl max-h-[90vh] w-full"
             >
-              <X className="h-6 w-6 text-white" />
-            </button>
-            
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-full object-contain rounded-xl shadow-2xl"
-              onClick={(e) => e.stopPropagation()}
-            />
-            
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6 rounded-b-xl">
-              <p className="text-white text-lg font-bold text-center font-barlow-condensed">
-                {selectedImage.alt}
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
+              <button
+                onClick={closeImageModal}
+                className="absolute -top-12 right-0 p-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full transition-colors duration-200 z-10"
+              >
+                <X className="h-6 w-6 text-white" />
+              </button>
+
+              <motion.img
+                initial={{ scale: 0.95 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", damping: 20, stiffness: 300 }}
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="w-full h-full object-contain rounded-xl shadow-2xl"
+                onClick={(e) => e.stopPropagation()}
+              />
+
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6 rounded-b-xl">
+                <p className="text-white text-lg font-bold text-center font-barlow-condensed mb-1">
+                  {selectedImage.alt}
+                </p>
+                <p className="text-white/80 text-sm italic text-center font-barlow-condensed">
+                  Arquivo pessoal
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
