@@ -101,7 +101,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
     return sections;
   };
 
-  const formatText = (text: string, isDiferenciais: boolean = false) => {
+  const formatText = (text: string, isDiferenciais: boolean = false, isTechnicalSection: boolean = false) => {
     return text.split('\n').map((line, index) => {
       line = line.trim();
       if (!line) return null;
@@ -145,6 +145,15 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               </div>
             ))}
           </div>
+        );
+      }
+
+      if (isTechnicalSection) {
+        return (
+          <li key={index} className="flex items-start gap-2 bg-gray-50 p-2 rounded-lg mb-2">
+            <span className="text-pian-red font-bold text-xs">•</span>
+            <span className="text-gray-800 text-xs leading-relaxed flex-1">{line}</span>
+          </li>
         );
       }
 
@@ -332,7 +341,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
                   <div className="px-8 py-6 bg-white">
                     <ul className="space-y-1.5 text-sm text-gray-800 leading-relaxed">
-                      {formatText(sections.enriquecimento)}
+                      {formatText(sections.enriquecimento, false, true)}
                     </ul>
                   </div>
                 </div>
@@ -353,7 +362,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
 
                   <div className="px-8 py-6 bg-white">
                     <ul className="space-y-1.5 text-sm text-gray-800 leading-relaxed">
-                      {formatText(sections.niveis)}
+                      {formatText(sections.niveis, false, true)}
                     </ul>
                   </div>
                 </div>
