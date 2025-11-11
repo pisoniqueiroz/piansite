@@ -196,10 +196,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/1tMPQ23S/2007-Primeira-Exportacao-para-o-Uruguai.jpg"
+              src="https://i.postimg.cc/65NRwrdB/tempImage1WFKzQ.avif"
               alt="Primeira exportação para o Uruguai"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/1tMPQ23S/2007-Primeira-Exportacao-para-o-Uruguai.jpg", "Primeira exportação para o Uruguai")}
+              onClick={() => openImageModal("https://i.postimg.cc/65NRwrdB/tempImage1WFKzQ.avif", "Primeira exportação para o Uruguai")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -224,10 +224,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/dQnjTBxx/5.png"
+              src="https://i.postimg.cc/DysmDrqK/tempImagelWomIM.avif"
               alt="Ampliação e extrusora francesa"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/dQnjTBxx/5.png", "Ampliação e extrusora francesa")}
+              onClick={() => openImageModal("https://i.postimg.cc/DysmDrqK/tempImagelWomIM.avif", "Ampliação e extrusora francesa")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -252,10 +252,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/vZxrkdHJ/6.png"
+              src="https://i.postimg.cc/RZSHJvp5/tempImageVs3Wqz.avif"
               alt="Linha de enlatados"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Linha de enlatados")}
+              onClick={() => openImageModal("https://i.postimg.cc/RZSHJvp5/tempImageVs3Wqz.avif", "Linha de enlatados")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -280,10 +280,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/vZxrkdHJ/6.png"
+              src="https://i.postimg.cc/YCrWLtnD/tempImage4zbkG4.avif"
               alt="Segunda ampliação do parque fabril"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Segunda ampliação do parque fabril")}
+              onClick={() => openImageModal("https://i.postimg.cc/YCrWLtnD/tempImage4zbkG4.avif", "Segunda ampliação do parque fabril")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -336,10 +336,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/vZxrkdHJ/6.png"
+              src="https://i.postimg.cc/2S0B4ggh/tempImageCPuh1g.avif"
               alt="Linha de sachês"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/vZxrkdHJ/6.png", "Linha de sachês")}
+              onClick={() => openImageModal("https://i.postimg.cc/2S0B4ggh/tempImageCPuh1g.avif", "Linha de sachês")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -364,10 +364,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/jdF6MjK6/4.png"
+              src="https://i.postimg.cc/zGxRn445/tempImage2NK9Ci.avif"
               alt="Quarta ampliação do parque fabril"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/jdF6MjK6/4.png", "Quarta ampliação do parque fabril")}
+              onClick={() => openImageModal("https://i.postimg.cc/zGxRn445/tempImage2NK9Ci.avif", "Quarta ampliação do parque fabril")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -392,10 +392,10 @@ const Timeline = () => {
               </div>
             </div>
             <img
-              src="https://i.postimg.cc/4yFc28C4/7.png"
+              src="https://i.postimg.cc/qMdn0s8T/tempImageLcLUQq.avif"
               alt="Quinta ampliação do parque fabril"
               className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              onClick={() => openImageModal("https://i.postimg.cc/4yFc28C4/7.png", "Quinta ampliação do parque fabril")}
+              onClick={() => openImageModal("https://i.postimg.cc/qMdn0s8T/tempImageLcLUQq.avif", "Quinta ampliação do parque fabril")}
               onError={(e) => {
                 e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
               }}
@@ -404,6 +404,34 @@ const Timeline = () => {
           <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
           <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
             O ano de 2022 marca a nossa mais recente ampliação do parque fabril, que passou por uma nova modernização.
+          </p>
+        </div>
+      )
+    },
+    {
+      title: '2025',
+      content: (
+        <div>
+          <h3 className="text-xl font-bold text-gray-900 font-barlow-condensed mb-4">Novos Horizontes e Expansão Contínua</h3>
+          <div className="rounded-xl overflow-hidden shadow-lg cursor-pointer group relative">
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100 z-10">
+              <div className="bg-white/90 rounded-full p-3">
+                <ZoomIn className="h-6 w-6 text-gray-900" />
+              </div>
+            </div>
+            <img
+              src="https://i.postimg.cc/nLPf1WSj/tempImageX28EAp.avif"
+              alt="Novos horizontes e expansão contínua"
+              className="w-full h-48 md:h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              onClick={() => openImageModal("https://i.postimg.cc/nLPf1WSj/tempImageX28EAp.avif", "Novos horizontes e expansão contínua")}
+              onError={(e) => {
+                e.currentTarget.src = 'https://images.pexels.com/photos/1254140/pexels-photo-1254140.jpeg?auto=compress&cs=tinysrgb&w=400';
+              }}
+            />
+          </div>
+          <p className="text-xs text-gray-500 italic font-barlow-condensed mt-1 mb-3">Arquivo pessoal</p>
+          <p className="text-gray-700 text-sm md:text-base font-barlow-condensed leading-relaxed mt-4">
+            Em 2025, continuamos nossa jornada de crescimento e inovação, sempre comprometidos com a qualidade dos nossos produtos, redução do impacto ambiental e inovação tecnológica.
           </p>
         </div>
       )
