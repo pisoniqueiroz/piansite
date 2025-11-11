@@ -41,7 +41,7 @@ const Distributors = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
             {/* Card principal da área restrita */}
-            <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl border border-pian-yellow/20 overflow-hidden transform hover:scale-105 transition-all duration-500 hover:shadow-3xl animate-fade-in-up">
+            <div className="bg-gray-900/90 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-500 hover:shadow-3xl animate-fade-in-up">
               {/* Header do card */}
               <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-8 py-6 relative overflow-hidden">
                 {/* Animação de brilho */}
