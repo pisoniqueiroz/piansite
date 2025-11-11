@@ -363,7 +363,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
               {product.classification !== 'Linha Peixes' &&
                product.classification !== 'Linha Snacks' &&
                product.classification !== 'Alimentos Úmidos' &&
-               product.type !== 'Alimento Úmido' && (
+               product.type !== 'Alimento Úmido' &&
+               !product.name.includes('PRÓPEIXES') &&
+               !product.name.includes('PROPEIXES') && (
                 <div className="backdrop-blur-sm rounded-3xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-500 mt-8">
                   <div className="bg-gradient-to-r from-pian-yellow to-pian-yellow-dark px-6 py-5 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
