@@ -11,11 +11,14 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # Rotas da API
 RewriteRule ^api/produtos$ api/produtos.php [L]
 RewriteRule ^api/produto/([0-9]+)$ api/produto.php?id=$1 [L]
+RewriteRule ^api/timeline$ test-timeline.php [L]
 
 # Páginas
 RewriteRule ^$ index.php [L]
 RewriteRule ^produtos$ produtos.php [L]
 RewriteRule ^sobre$ sobre.php [L]
+RewriteRule ^historia$ sobre.php [L]
+RewriteRule ^timeline$ sobre.php [L]
 RewriteRule ^blog$ blog.php [L]
 RewriteRule ^distribuidores$ distribuidores.php [L]
 RewriteRule ^contato$ contato.php [L]
