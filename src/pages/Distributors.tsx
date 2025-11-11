@@ -47,7 +47,7 @@ const Distributors = () => {
                 {/* Animação de brilho */}
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full animate-shimmer"></div>
                 <div className="flex items-center justify-center">
-                  <div className="w-16 h-16 bg-pian-black/20 rounded-full flex items-center justify-center mr-4 animate-pulse-orange">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mr-4">
                     <Lock className="h-8 w-8 text-pian-black" />
                   </div>
                   <div className="text-center">
