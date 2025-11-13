@@ -1,4 +1,5 @@
 import { supabase, ProductInsert } from './supabase';
+import { getProductSortOrder } from './product-order';
 
 const products: ProductInsert[] = [
   { name: 'Lupydog', image: '/lupy-dog-7kg-1.png', description: 'Ração completa para cães adultos', category: 'Standard', type: 'Cães', display_priority: 2 },
@@ -72,9 +73,14 @@ export async function seedProducts() {
       return;
     }
 
+    const productsWithSortOrder = products.map(product => ({
+      ...product,
+      sort_order: getProductSortOrder(product.name)
+    }));
+
     const { data, error } = await supabase
       .from('products')
-      .insert(products)
+      .insert(productsWithSortOrder)
       .select();
 
     if (error) {

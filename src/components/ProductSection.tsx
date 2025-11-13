@@ -127,6 +127,13 @@ const ProductSection = () => {
   const classificationOrder = { 'Super Premium': 1, 'Premium Especial': 2, 'Premium': 3, 'Standard': 4 };
   const lineOrder = { 'Sachê': 1, 'Enlatado': 2 };
   const sortedProducts = filteredProducts.sort((a, b) => {
+    const sortOrderA = a.sort_order ?? 9999;
+    const sortOrderB = b.sort_order ?? 9999;
+
+    if (sortOrderA !== sortOrderB) {
+      return sortOrderA - sortOrderB;
+    }
+
     const priorityA = a.display_priority || 2;
     const priorityB = b.display_priority || 2;
 

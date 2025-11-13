@@ -1,4 +1,5 @@
 import { supabase } from './supabase';
+import { getProductSortOrder } from './product-order';
 
 const productClassification = {
   'Super Premium': [
@@ -128,20 +129,23 @@ export async function classifyAllProducts() {
     for (const product of products || []) {
       const classification = findClassification(product.name);
       const displayPriority = getDisplayPriority(product.name);
+      const sortOrder = getProductSortOrder(product.name);
 
       updates.push({
         id: product.id,
         name: product.name,
         oldClassification: product.classification,
         newClassification: classification,
-        displayPriority
+        displayPriority,
+        sortOrder
       });
 
       const { error: updateError } = await supabase
         .from('products')
         .update({
           classification,
-          display_priority: displayPriority
+          display_priority: displayPriority,
+          sort_order: sortOrder
         })
         .eq('id', product.id);
 

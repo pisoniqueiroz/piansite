@@ -19,6 +19,7 @@ export interface Product {
   line?: string;
   classification?: string;
   display_priority?: number;
+  sort_order?: number;
   created_at: string;
   updated_at: string;
 }
@@ -32,6 +33,7 @@ export interface ProductInsert {
   line?: string;
   classification?: string;
   display_priority?: number;
+  sort_order?: number;
 }
 
 export interface ProductUpdate extends Partial<ProductInsert> {}
