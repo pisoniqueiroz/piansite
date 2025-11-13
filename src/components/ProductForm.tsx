@@ -17,6 +17,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
     type: 'Ração Seca',
     line: '',
     classification: 'Standard',
+    display_priority: 2,
   });
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -32,6 +33,7 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
         type: product.type,
         line: product.line || '',
         classification: product.classification || 'Standard',
+        display_priority: product.display_priority || 2,
       });
       setImagePreview(product.image);
     }
@@ -251,6 +253,23 @@ const ProductForm: React.FC<ProductFormProps> = ({ product, onClose, onSuccess }
                 />
                 <p className="mt-1 text-sm text-gray-500 font-barlow-condensed">
                   Nome da marca/linha do produto
+                </p>
+              </div>
+
+              <div>
+                <label className="block text-sm font-black text-pian-black mb-2 font-barlow-condensed uppercase">
+                  Prioridade de Exibição *
+                </label>
+                <select
+                  value={formData.display_priority}
+                  onChange={(e) => handleChange('display_priority', e.target.value)}
+                  className="w-full px-4 py-3 border-2 border-gray-200 focus:outline-none focus:border-pian-red font-barlow-condensed"
+                >
+                  <option value="1">Alta (MikCat/MikDog)</option>
+                  <option value="2">Normal (Outras marcas)</option>
+                </select>
+                <p className="mt-1 text-sm text-gray-500 font-barlow-condensed">
+                  Produtos com prioridade alta aparecem primeiro
                 </p>
               </div>
             </div>

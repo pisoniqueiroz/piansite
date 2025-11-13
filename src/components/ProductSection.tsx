@@ -124,14 +124,21 @@ const ProductSection = () => {
     return product.classification === selectedLine;
   });
 
-  // Ordenar produtos por classificação (Super Premium primeiro)
   const classificationOrder = { 'Super Premium': 1, 'Premium Especial': 2, 'Premium': 3, 'Standard': 4 };
   const sortedProducts = filteredProducts.sort((a, b) => {
+    const priorityA = a.display_priority || 2;
+    const priorityB = b.display_priority || 2;
+
+    if (priorityA !== priorityB) {
+      return priorityA - priorityB;
+    }
+
     const orderA = classificationOrder[a.classification as keyof typeof classificationOrder] || 5;
     const orderB = classificationOrder[b.classification as keyof typeof classificationOrder] || 5;
     if (orderA !== orderB) {
       return orderA - orderB;
     }
+
     return a.name.localeCompare(b.name);
   });
 

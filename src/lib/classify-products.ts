@@ -106,6 +106,15 @@ function findClassification(productName: string): string {
   return 'Standard';
 }
 
+function isPriorityProduct(productName: string): boolean {
+  const normalizedName = normalizeProductName(productName);
+  return normalizedName.includes('MIKCAT') || normalizedName.includes('MIKDOG');
+}
+
+function getDisplayPriority(productName: string): number {
+  return isPriorityProduct(productName) ? 1 : 2;
+}
+
 export async function classifyAllProducts() {
   try {
     const { data: products, error: fetchError } = await supabase
@@ -120,17 +129,22 @@ export async function classifyAllProducts() {
 
     for (const product of products || []) {
       const classification = findClassification(product.name);
+      const displayPriority = getDisplayPriority(product.name);
 
       updates.push({
         id: product.id,
         name: product.name,
         oldClassification: product.classification,
-        newClassification: classification
+        newClassification: classification,
+        displayPriority
       });
 
       const { error: updateError } = await supabase
         .from('products')
-        .update({ classification })
+        .update({
+          classification,
+          display_priority: displayPriority
+        })
         .eq('id', product.id);
 
       if (updateError) {
