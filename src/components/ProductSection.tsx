@@ -125,12 +125,19 @@ const ProductSection = () => {
   });
 
   const classificationOrder = { 'Super Premium': 1, 'Premium Especial': 2, 'Premium': 3, 'Standard': 4 };
+  const lineOrder = { 'Sachê': 1, 'Enlatado': 2 };
   const sortedProducts = filteredProducts.sort((a, b) => {
     const priorityA = a.display_priority || 2;
     const priorityB = b.display_priority || 2;
 
     if (priorityA !== priorityB) {
       return priorityA - priorityB;
+    }
+
+    const lineOrderA = lineOrder[a.line as keyof typeof lineOrder] || 999;
+    const lineOrderB = lineOrder[b.line as keyof typeof lineOrder] || 999;
+    if (lineOrderA !== lineOrderB) {
+      return lineOrderA - lineOrderB;
     }
 
     const orderA = classificationOrder[a.classification as keyof typeof classificationOrder] || 5;
