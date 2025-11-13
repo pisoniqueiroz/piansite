@@ -79,10 +79,7 @@ const About = () => {
             {/* Texto */}
             <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed space-y-6 font-montserrat">
               <p className="text-justify">
-                Desde 1984, nossa trajetória tem sido guiada por união, trabalho e espírito empreendedor — valores 
-                transmitidos pelos nossos pais e fortalecidos ao longo das gerações. Nascemos no campo, com 
-                raízes firmes na agricultura e na criação de animais, e crescemos movidos pelo propósito de oferecer 
-                nutrição de qualidade aos pets.
+                Desde 1984, nossa trajetória tem sido guiada por união, trabalho e espírito empreendedor, valores transmitidos pelos nossos pais e fortalecidos ao longo das gerações. Nascemos no campo, com raízes firmes na agricultura e na criação de animais, e crescemos movidos pelo propósito de oferecer nutrição de qualidade aos pets.
               </p>
               <p className="text-justify">
                 Nosso caminho começou com a produção de milho e a criação de suínos. Para alimentar os próprios
