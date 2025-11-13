@@ -19,11 +19,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, isOpen, onClose })
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const guiaAlimentarImages = [
-    'https://i.postimg.cc/L800ZRcx/1.png',
-    'https://i.postimg.cc/CxKQ1dQj/2.png',
-    'https://i.postimg.cc/MpGFTXF0/3.png',
-    'https://i.postimg.cc/2S5K63Kx/4.png',
-    'https://i.postimg.cc/8zC05s0H/5.png',
+    'https://i.postimg.cc/xTMpWBLY/1.png',
+    'https://i.postimg.cc/WbgYQxgC/3.png',
+    'https://i.postimg.cc/CMW6rwnS/4.png',
+    'https://i.postimg.cc/3JmfPzm6/5.png',
+    'https://i.postimg.cc/qB9ZDp6p/6.png',
   ];
 
   const nextSlide = () => {
