@@ -85,12 +85,10 @@ const About = () => {
                 nutrição de qualidade aos pets.
               </p>
               <p className="text-justify">
-                Nosso caminho começou com a produção de milho e a criação de suínos. Para alimentar os próprios 
-                animais, a família passou a fabricar ração em pequena escala, o que trouxe mais controle, economia 
-                e, principalmente, resultados surpreendentes. Um episódio marcante foi a recuperação de um 
-                cãozinho debilitado, doado por vizinhos, que ganhou saúde e vitalidade ao ser alimentado com a 
-                ração feita em casa. Foi ali que reconhecemos nosso potencial: nutrir com qualidade, carinho e 
-                responsabilidade.
+                Nosso caminho começou com a produção de milho e a criação de suínos. Para alimentar os próprios
+                animais, a família passou a fabricar ração em pequena escala, o que trouxe mais controle, economia
+                e, principalmente, resultados surpreendentes. Foi ali que reconhecemos nosso potencial: nutrir com
+                qualidade, carinho e responsabilidade.
               </p>
             </div>
             
