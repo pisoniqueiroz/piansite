@@ -81,7 +81,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               <button
                 key={index}
                 onClick={() => navigateToYear(index)}
-                className={`relative z-10 w-12 h-12 rounded-full border-4 transition-all duration-300 font-bold text-sm ${
+                className={`relative z-10 min-w-[3.5rem] h-14 px-2 rounded-full border-4 transition-all duration-300 font-bold text-xs ${
                   index <= currentIndex
                     ? 'bg-gradient-to-r from-red-500 to-red-600 border-white text-white shadow-lg scale-110'
                     : 'bg-white border-gray-300 text-gray-600 hover:border-gray-400 hover:scale-105'
